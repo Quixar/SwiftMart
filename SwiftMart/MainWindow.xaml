@@ -5,8 +5,114 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SwiftMart"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
+    
     <Grid>
+        <DockPanel LastChildFill="True">
+            
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Background="#F0F0F0" Height="50">
+                
+                <TextBlock Text="Лого" FontSize="16" VerticalAlignment="Center" Margin="10,0,10,0" />
+                
+                <TextBox Width="400" Height="30" VerticalAlignment="Center" Margin="10,0">
+                    
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="VerticalContentAlignment" Value="Center" />
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+                пше gi
+                <Button Content="🔍" Width="30" Height="30" VerticalAlignment="Center" Margin="5,0" />
 
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Button Content="Корзина" Margin="10,0" VerticalAlignment="Center" />
+                    <Button Content="ВЗ" Margin="10,0" VerticalAlignment="Center" />
+                    <Button Content="ЛК" Margin="10,0" VerticalAlignment="Center" />
+                    
+                </StackPanel>
+                
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Background="#E0E0E0" Height="30" VerticalAlignment="Top">
+                <Expander Header="Все кат" Margin="5" Width="150" VerticalAlignment="Center">
+                    <StackPanel>
+                        <TextBlock Text="Категория 1" Margin="5" />
+                        <TextBlock Text="Категория 2" Margin="5" />
+                        <TextBlock Text="Категория 3" Margin="5" />
+                    </StackPanel>
+                </Expander>
+                <Button Content="Популярные" Margin="5" />
+                <Button Content="Больше" Margin="5" />
+            </StackPanel>
+        </DockPanel>
+
+        <Grid Margin="10,80,10,50">
+            <UniformGrid Columns="5" Rows="2" Margin="0,2,0,2">
+                <Image Source="C:\Users\lolim\Pictures\wp2738130.png" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Width="250" 
+                Height="200"
+                Margin="5"/>
+                <Image Source="C:\Users\lolim\Pictures\wp2738130.png" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Width="250" 
+                Height="200"
+                Margin="5"/>
+                <Image Source="C:\Users\lolim\Pictures\wp2738130.png" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Width="250" 
+                Height="200"
+                       Margin="5"/>
+                <Image Source="C:\Users\lolim\Pictures\wp2738130.png" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Width="250" 
+                Height="200"
+                       Margin="5"/>
+                <Image Source="C:\Users\lolim\Pictures\wp2738130.png" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Width="250" 
+                Height="200"
+                Margin="5"/>
+                <Image Source="C:\Users\lolim\Pictures\wp2738130.png" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Width="250" 
+                Height="200"
+                Margin="5"/>
+                <Image Source="C:\Users\lolim\Pictures\wp2738130.png" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Width="250" 
+                Height="200"
+                Margin="5"/>
+                <Image Source="C:\Users\lolim\Pictures\wp2738130.png" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Width="250" 
+                Height="200"
+                Margin="5"/>
+                <Image Source="C:\Users\lolim\Pictures\wp2738130.png" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Width="250" 
+                Height="200"
+                Margin="5"/>
+                <Image Source="C:\Users\lolim\Pictures\wp2738130.png" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Width="250" 
+                Height="200"     
+                Margin="5"/>
+            </UniformGrid>
+        </Grid>
+        
+        <TextBlock Text="Информация о правилах пользования" FontSize="16" TextAlignment="Center" VerticalAlignment="Bottom" Margin="10" />
+        
     </Grid>
 </Window>
