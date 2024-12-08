@@ -1,12 +1,14 @@
-﻿using System;
+﻿using SwiftMart.Accounts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SwiftMart.TestDirectory
+namespace SwiftMart.AccountEntities
 {
-    internal class TestClass
+    public class Admin : Account
     {
+
     }
 }
