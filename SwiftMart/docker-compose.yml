@@ -1,0 +1,15 @@
+volumes:
+  pg_swiftmart:
+    
+services:
+  swiftmart_db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=pg_swiftmart
+    volumes:
+      - pg_swiftmart:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5432:5432"
