@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SwiftMart.UserEntities
 {
-    class Admin
+    public class Admin
     {
         public void ModerateProduct(int productId)
         {

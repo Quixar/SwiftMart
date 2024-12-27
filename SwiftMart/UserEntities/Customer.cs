@@ -10,7 +10,7 @@ using SwiftMart.OrderEntities;
 
 namespace SwiftMart.UserEntities
 {
-    class Customer
+    public class Customer
     {
         public Cart Cart { get; set; }
         public List<Order> Orders { get; set; }

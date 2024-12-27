@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SwiftMart.StatisticEntities
 {
-    class SalesStatistics
+    public class SalesStatistics
     {
         public List<Product> PopularProducts { get; set; }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SwiftMart.UserEntities
 {
-    class Seller
+    public class Seller
     {
         public Store Store { get; set; }
         public List<Product> Products { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SwiftMart.AccountEntities
 {
-    public class Admin : Account
+    public class AdminAccount : Account
     {
 
     }

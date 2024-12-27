@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SwiftMart.OrderEntities
 {
-    class Cart
+    public class Cart
     {
         public List<int> ProductID { get; set; }
 

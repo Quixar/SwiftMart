@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SwiftMart.UserEntities;
 
 namespace SwiftMart.DataBase
 {
@@ -17,15 +13,12 @@ namespace SwiftMart.DataBase
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(@"host=localhost;port=5432;database=SpotifyCSharp;username=postgres;password=root");
+            optionsBuilder.UseNpgsql(@"host=localhost;port=5432;database=pg_swiftmart;username=postgres;password=root");
         }
 
-        //public DbSet<Performer> Performers { get; set; }
-
-        //public DbSet<Song> Songs { get; set; }
-
-        //public DbSet<Radio> Radios { get; set; }
-
-        //public DbSet<MusicCollection> MusicCollections { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Seller> Sellers { get; set; }
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }

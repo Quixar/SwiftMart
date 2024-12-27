@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SwiftMart.OrderEntities
 {
-    class Order
+    public class Order
     {
         public int Id { get; set; }
         public int CustomerID { get; set; }

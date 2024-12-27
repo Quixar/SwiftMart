@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SwiftMart.ProductEntity
 {
-    class Store
+    public class Store
     {
         public string Name { get; set; }
         public List<Product> Products { get; set; }
