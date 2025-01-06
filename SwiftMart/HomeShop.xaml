@@ -1,0 +1,815 @@
+﻿<Window x:Class="SwiftMart.HomeShop"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SwiftMart"
+        mc:Ignorable="d"
+        Title="HomeShop" Height="1080" Width="1920">
+    <Grid>
+        <!-- Верхний красный бар -->
+        <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="320" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="225" />
+                <ColumnDefinition Width="321" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Логотип -->
+            <Image Grid.Column="0" Margin="61,13,61,22" Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill"/>
+
+            <!-- Поиск -->
+            <Border CornerRadius="10" BorderBrush="Black" BorderThickness="2" Background="LightGray" Padding="2" Grid.Column="1" Margin="303,35,77,35">
+
+                <TextBox Background="Transparent" BorderThickness="0" VerticalAlignment="Top" Text="Search" Margin="6,4,14,0" FontFamily="Arial" />
+            </Border>
+
+            <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="219,0,49,0" Click="Button_Click_1">
+                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\round-account-button-with-user-inside_icon-icons.com_72596.png" Stretch="Fill" RenderTransformOrigin="-1.878,0.467" Height="55"/>
+            </Button>
+
+            <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="84,0,186,0">
+                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\1490129319-rounded09_82169.png" Stretch="Fill"  RenderTransformOrigin="2.732,0.513"/>
+            </Button>
+        </Grid>
+
+        <!-- Категории и основное содержимое -->
+        <Grid Margin="0,100,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Background="#D40000">
+                <!-- Верхняя панель -->
+                <Menu HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="16" Background="#D40000">
+                    <Menu.Resources>
+                        <!-- Стиль для закругленных элементов меню -->
+                        <Style TargetType="MenuItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="MenuItem">
+                                        <Border Background="White" CornerRadius="10" BorderBrush="Gray" BorderThickness="1"
+                                                    Padding="5" SnapsToDevicePixels="True">
+                                            <DockPanel>
+                                                <ContentPresenter ContentSource="Header" VerticalAlignment="Center" />
+                                                <Popup Placement="Right" IsOpen="{TemplateBinding IsSubmenuOpen}">
+                                                    <Border Background="White" CornerRadius="10" BorderBrush="Gray" BorderThickness="1"
+                                                            Padding="5" SnapsToDevicePixels="True" Margin="-1,0,0,0">
+                                                        <ItemsPresenter />
+                                                    </Border>
+                                                </Popup>
+                                            </DockPanel>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Menu.Resources>
+
+                    <!-- Основные категории -->
+                    <MenuItem Header="All Categories" Width="205" FontFamily="Arial">
+                        <!-- Вложенные пункты меню -->
+                        <MenuItem Header="Laptops and Computers" Background="#D40000">
+                            <MenuItem Header="Laptops">
+                                <MenuItem Header="Asus" />
+                                <MenuItem Header="Lenovo" />
+                                <MenuItem Header="Acer" />
+                                <MenuItem Header="HP (Hewlett Packard)" />
+                                <MenuItem Header="Dell" />
+                                <MenuItem Header="Apple Macbook" />
+                            </MenuItem>
+                            <MenuItem Header="Tablets">
+                                <MenuItem Header="Apple iPad" />
+                                <MenuItem Header="Samsung" />
+                                <MenuItem Header="Lenovo" />
+                                <MenuItem Header="Xiaomi" />
+                                <MenuItem Header="Tablet cases" />
+                                <MenuItem Header="Protective films and glasses" />
+                            </MenuItem>
+                            <MenuItem Header="Computers">
+                                <MenuItem Header="Monitors" />
+                                <MenuItem Header="Keyboards and mice" />
+                                <MenuItem Header="Computer speakers" />
+                                <MenuItem Header="Software" />
+                                <MenuItem Header="Uninterruptible power supplies" />
+                                <MenuItem Header="Batteries for UPS" />
+                            </MenuItem>
+                            <MenuItem Header="Accessories">
+                                <MenuItem Header="Video cards" />
+                                <MenuItem Header="SSD" />
+                                <MenuItem Header="Processors" />
+                                <MenuItem Header="Hard drives and disk arrays" />
+                                <MenuItem Header="RAM" />
+                                <MenuItem Header="Motherboards" />
+                                <MenuItem Header="Power supplies" />
+                                <MenuItem Header="Housings" />
+                                <MenuItem Header="Cooling systems" />
+                            </MenuItem>
+                            <MenuItem Header="Accessories for laptops and PCs">
+                                <MenuItem Header="USB flash memory" />
+                                <MenuItem Header="Power filters, adapters and extension cords" />
+                                <MenuItem Header="Bags, backpacks and laptop cases" />
+                                <MenuItem Header="Laptop stands and tables" />
+                                <MenuItem Header="Webcams" />
+                                <MenuItem Header="Headphones" />
+                                <MenuItem Header="Microphones" />
+                                <MenuItem Header="Universal mobile batteries" />
+                                <MenuItem Header="Cables and adapters" />
+                                <MenuItem Header="Graphics tablets"/>
+                            </MenuItem>
+                            <MenuItem Header="Office equipment">
+                                <MenuItem Header="MFPs/Printers" />
+                                <MenuItem Header="Consumables" />
+                                <MenuItem Header="Shredders" />
+                                <MenuItem Header="Telephones" />
+                            </MenuItem>
+                            <MenuItem Header="Network equipment">
+                                <MenuItem Header="Routers" />
+                                <MenuItem Header="Switches" />
+                                <MenuItem Header="Network adapters" />
+                                <MenuItem Header="Wireless access points" />
+                                <MenuItem Header="Network Attached Storage (NAS)" />
+                                <MenuItem Header="Patch cords" />
+                                <MenuItem Header="IP telephony" />
+                                <MenuItem Header="Communication amplifiers" />
+                            </MenuItem>
+                            <MenuItem Header="Goods for gamers">
+                                <MenuItem Header="PlayStation" />
+                                <MenuItem Header="Sony PlayStation 5" />
+                                <MenuItem Header="Game consoles and children's consoles" />
+                                <MenuItem Header="Game manipulators and accessories" />
+                                <MenuItem Header="Games" />
+                                <MenuItem Header="Playing surfaces" />
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Phones, TV, Electronics">
+                            <MenuItem Header="Telephones">
+                                <MenuItem Header="Apple" />
+                                <MenuItem Header="Samsung" />
+                                <MenuItem Header="Xiaomi" />
+                                <MenuItem Header="Motorola" />
+                                <MenuItem Header="Nokia" />
+                                <MenuItem Header="Smartphones" />
+                                <MenuItem Header="Push-button phones" />
+                            </MenuItem>
+                            <MenuItem Header="Power banks and charging stations">
+                                <MenuItem Header="Universal mobile batteries" />
+                                <MenuItem Header="Charging stations" />
+                            </MenuItem>
+                            <MenuItem Header="Phone Accessories">
+                                <MenuItem Header="Headphones" />
+                                <MenuItem Header="Cables and adapters" />
+                                <MenuItem Header="Memory cards" />
+                                <MenuItem Header="Cell phone cases" />
+                                <MenuItem Header="Book cases" />
+                                <MenuItem Header="Bumpers" />
+                                <MenuItem Header="Protective films and glass" />
+                                <MenuItem Header="Holders" />
+                                <MenuItem Header="Chargers" />
+                                <MenuItem Header="Mobile Internet" />
+                            </MenuItem>
+                            <MenuItem Header="TVs and accessories">
+                                <MenuItem Header="TVs" />
+                                <MenuItem Header="Samsung" />
+                                <MenuItem Header="LG" />
+                                <MenuItem Header="Xiaomi" />
+                                <MenuItem Header="TV stands, TV mounts" />
+                                <MenuItem Header="TV antennas and receivers" />
+                                <MenuItem Header="Universal remote controls" />
+                                <MenuItem Header="TV parts and equipment" />
+                            </MenuItem>
+                            <MenuItem Header="Photo and video">
+                                <MenuItem Header="Photo cameras" />
+                                <MenuItem Header="Video cameras" />
+                                <MenuItem Header="Action Cameras" />
+                                <MenuItem Header="Lenses" />
+                                <MenuItem Header="Photo/Video Accessories" />
+                                <MenuItem Header="Chargers for cameras and camcorders" />
+                                <MenuItem Header="Batteries and accumulators" />
+                                <MenuItem Header="Tripods" />
+                                <MenuItem Header="Studio equipment" />
+                                <MenuItem Header="Studio light" />
+                                <MenuItem Header="Bags and cases" />
+                            </MenuItem>
+                            <MenuItem Header="Portable electronics">
+                                <MenuItem Header="Smartwatch" />
+                                <MenuItem Header="Apple Watch" />
+                                <MenuItem Header="Fitness bracelets" />
+                                <MenuItem Header="Tablets" />
+                                <MenuItem Header="Tablet Accessories" />
+                                <MenuItem Header="Smartwatch and tracker accessories" />
+                                <MenuItem Header="E-books" />
+                                <MenuItem Header="Voice recorders" />
+                                <MenuItem Header="Bluetooth headsets" />
+                                <MenuItem Header="MP3 players" />
+                                <MenuItem Header="3D and VR glasses" />
+                            </MenuItem>
+                            <MenuItem Header="Audio equipment">
+                                <MenuItem Header="Acoustic systems" />
+                                <MenuItem Header="Portable speakers" />
+                                <MenuItem Header="Computer speakers" />
+                                <MenuItem Header="Media players" />
+                                <MenuItem Header="Home theaters" />
+                            </MenuItem>
+                            <MenuItem Header="Audio equipment">
+                                <MenuItem Header="Acoustic systems" />
+                                <MenuItem Header="Portable speakers" />
+                                <MenuItem Header="Computer speakers" />
+                                <MenuItem Header="Media players" />
+                                <MenuItem Header="Home theaters" />
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Gaming Products">
+                            <MenuItem Header="PlayStation">
+                                <MenuItem Header="PlayStation 5 game consoles"/>
+                                <MenuItem Header="PlayStation 4 game consoles"/>
+                                <MenuItem Header="PlayStation game consoles"/>
+                                <MenuItem Header="PlayStation Gamepads"/>
+                                <MenuItem Header="VR PlayStation Helmets"/>
+                                <MenuItem Header="PlayStation headsets"/>
+                                <MenuItem Header="Games for PlayStation 5"/>
+                                <MenuItem Header="Games for PlayStation 4"/>
+                            </MenuItem>
+                            <MenuItem Header="Nintendo game consoles">
+                                <MenuItem Header="Games for Nintendo"/>
+                            </MenuItem>
+                            <MenuItem Header="Xbox game consoles">
+                                <MenuItem Header="Games for Xbox"/>
+                            </MenuItem>
+                            <MenuItem Header="Gaming laptops">
+                                <MenuItem Header="Asus"/>
+                                <MenuItem Header="HP"/>
+                                <MenuItem Header="Acer"/>
+                                <MenuItem Header="MSI"/>
+                                <MenuItem Header="Dell"/>
+                                <MenuItem Header="Lenovo"/>
+                                <MenuItem Header="PC Games"/>
+                            </MenuItem>
+                            <MenuItem Header="Gaming computers">
+                                <MenuItem Header="ARTLINE"/>
+                                <MenuItem Header="QUBE"/>
+                                <MenuItem Header="Cobra"/>
+                            </MenuItem>
+                            <MenuItem Header="Gaming monitors">
+                                <MenuItem Header="Samsung"/>
+                                <MenuItem Header="Acer"/>
+                                <MenuItem Header="AOC"/>
+                                <MenuItem Header="Asus"/>
+                                <MenuItem Header="MSI"/>
+                                <MenuItem Header="QUBE"/>
+                            </MenuItem>
+                            <MenuItem Header="Accessories for gamers">
+                                <MenuItem Header="Video cards"/>
+                                <MenuItem Header="Processors"/>
+                                <MenuItem Header="RAM"/>
+                                <MenuItem Header="Motherboards"/>
+                                <MenuItem Header="HDDs"/>
+                                <MenuItem Header="Power supplies"/>
+                                <MenuItem Header="Cooling systems"/>
+                                <MenuItem Header="HDDs"/>
+                                <MenuItem Header="Power supplies"/>
+                                <MenuItem Header="Cases"/>
+                            </MenuItem>
+                            <MenuItem Header="Gaming peripherals">
+                                <MenuItem Header="Headphones"/>
+                                <MenuItem Header="Gaming mice"/>
+                                <MenuItem Header="Gaming keyboards"/>
+                                <MenuItem Header="Play mats"/>
+                                <MenuItem Header="Manipulators, joysticks."/>
+                                <MenuItem Header="Gamer chairs"/>
+                                <MenuItem Header="Computer desks"/>
+                                <MenuItem Header="Gamer backpacks"/>
+                            </MenuItem>
+                            <MenuItem Header="Paraphernalia and souvenirs">
+                                <MenuItem Header="Bracelets"/>
+                                <MenuItem Header="Keychains"/>
+                                <MenuItem Header="Purses"/>
+                                <MenuItem Header="Cushions"/>
+                                <MenuItem Header="Cups"/>
+                                <MenuItem Header="Figurines and figurines"/>
+                                <MenuItem Header="Clothing for gamers"/>
+                                <MenuItem Header="Caps and hats"/>
+                                <MenuItem Header="Backpacks and bags"/>
+                                <MenuItem Header="Soft toys"/>
+                                <MenuItem Header="Gift sets for gamers"/>
+                                <MenuItem Header="Pictures and posters"/>
+                            </MenuItem>
+                        </MenuItem>
+                        <MenuItem Header="Household Appliances">
+                            <MenuItem Header="Large household appliances">
+                                <MenuItem Header="Washing machines"/>
+                                <MenuItem Header="Refrigerators"/>
+                                <MenuItem Header="Washing machines with dryer"/>
+                                <MenuItem Header="Microwave ovens"/>
+                                <MenuItem Header="Dishwashers"/>
+                                <MenuItem Header="Plates"/>
+                                <MenuItem Header="Built-in ovens"/>
+                                <MenuItem Header="Drying machines"/>
+                                <MenuItem Header="Built-in hobs"/>
+                                <MenuItem Header="Built-in appliance sets"/>
+                                <MenuItem Header="Freezers"/>
+                                <MenuItem Header="Kitchen hoods"/>
+                                <MenuItem Header="Warranty extension certificates"/>
+                                <MenuItem Header="Installation of large appliances"/>
+                                <MenuItem Header="Access, activation and online refill cards for Culinara packages"/>
+                            </MenuItem>
+                            <MenuItem Header="Climate technology">
+                                <MenuItem Header="Heaters"/>
+                                <MenuItem Header="Boilers"/>
+                                <MenuItem Header="Vacuum cleaners for dry cleaning"/>
+                                <MenuItem Header="Air purifiers"/>
+                                <MenuItem Header="Humidifiers"/>
+                                <MenuItem Header="Air dryers"/>
+                                <MenuItem Header="Air conditioners"/>
+                                <MenuItem Header="Air conditioner installation"/>
+                                <MenuItem Header="Warranty extension certificates"/>
+                            </MenuItem>
+                            <MenuItem Header="Beauty and health">
+                                <MenuItem Header="Toothbrushes and irrigators"/>
+                                <MenuItem Header="Hairdryers"/>
+                                <MenuItem Header="Stylers"/>
+                                <MenuItem Header="Blowtorches"/>
+                                <MenuItem Header="Trimmers"/>
+                                <MenuItem Header="Electric shavers"/>
+                                <MenuItem Header="Hair clippers"/>
+                                <MenuItem Header="Massagers"/>
+                                <MenuItem Header="Hair irons"/>
+                                <MenuItem Header="Hair curlers"/>
+                                <MenuItem Header="Heated bedding"/>
+                                <MenuItem Header="Cosmetic mirrors"/>
+                                <MenuItem Header="Cosmetic appliances"/>
+                            </MenuItem>
+                            <MenuItem Header="Kitchen">
+                                <MenuItem Header="Coffee machines"/>
+                                <MenuItem Header="Multicookers and air grills"/>
+                                <MenuItem Header="Blenders"/>
+                                <MenuItem Header="Grills and electric kebab makers"/>
+                                <MenuItem Header="Multicookers"/>
+                                <MenuItem Header="Coffee makers"/>
+                                <MenuItem Header="Food processors"/>
+                                <MenuItem Header="Electric kettles"/>
+                                <MenuItem Header="Grinders"/>
+                                <MenuItem Header="Tabletop Cookers"/>
+                                <MenuItem Header="Domestic vacuum packers"/>
+                                <MenuItem Header="Gas machines"/>
+                                <MenuItem Header="Toasters"/>
+                                <MenuItem Header="Filter jugs"/>
+                                <MenuItem Header="Access, activation and online refill cards for Culinara packages"/>
+                            </MenuItem>
+                            <MenuItem Header="RZTK">
+                                <MenuItem Header="Electric toothbrushes"/>
+                                <MenuItem Header="Vacuum cleaners"/>
+                                <MenuItem Header="Blenders"/>
+                                <MenuItem Header="Electric Kettles"/>
+                                <MenuItem Header="Multicookers"/>
+                                <MenuItem Header="Microwave ovens"/>
+                                <MenuItem Header="Climatic appliances"/>
+                                <MenuItem Header="Food processors"/>
+                            </MenuItem>
+                        </MenuItem>
+
+                        <MenuItem Header="Household goods">
+                            <MenuItem Header="Furniture">
+                                <MenuItem Header="Chairs"/>
+                                <MenuItem Header="Computer tables"/>
+                                <MenuItem Header="Chairs and stools"/>
+                                <MenuItem Header="Frameless furniture"/>
+                                <MenuItem Header="Garden furniture"/>
+                            </MenuItem>
+                            <MenuItem Header="Home textiles">
+                                <MenuItem Header="Bedding"/>
+                                <MenuItem Header="Mattresses"/>
+                                <MenuItem Header="Blankets"/>
+                                <MenuItem Header="Pillows"/>
+                                <MenuItem Header="Mattress covers and mattress pads"/>
+                                <MenuItem Header="Plaids"/>
+                                <MenuItem Header="Towels"/>
+                                <MenuItem Header="Bedspreads"/>
+                            </MenuItem>
+                            <MenuItem Header="Safety and security systems">
+                                <MenuItem Header="Intercoms"/>
+                                <MenuItem Header="Video surveillance kits"/>
+                                <MenuItem Header="Alarm kits"/>
+                                <MenuItem Header="Video Intercoms"/>
+                                <MenuItem Header="Voltage stabilizers"/>
+                                <MenuItem Header="Inverters"/>
+                            </MenuItem>
+                            <MenuItem Header="Cookware">
+                                <MenuItem Header="For cooking"/>
+                                <MenuItem Header="Serving utensils"/>
+                                <MenuItem Header="Kitchen accessories"/>
+                                <MenuItem Header="Kitchen knives and accessories"/>
+                                <MenuItem Header="Storage and packaging"/>
+                            </MenuItem>
+                            <MenuItem Header="Home and office equipment">
+                                <MenuItem Header="Laundry and ironing"/>
+                                <MenuItem Header="Cleaning tools"/>
+                                <MenuItem Header="Storage and space organization"/>
+                                <MenuItem Header="Buckets and baskets"/>
+                                <MenuItem Header="Household tools"/>
+                                <MenuItem Header="Ladders"/>
+                            </MenuItem>
+                            <MenuItem Header="Household goods">
+                                <MenuItem Header="Toilet paper"/>
+                                <MenuItem Header="Garbage bags"/>
+                                <MenuItem Header="Wipes"/>
+                            </MenuItem>
+                            <MenuItem Header="Household chemicals">
+                                <MenuItem Header="Laundry products"/>
+                                <MenuItem Header="Dishwashers"/>
+                                <MenuItem Header="Home Appliance Care"/>
+                                <MenuItem Header="Kitchen care products"/>
+                                <MenuItem Header="Bathroom and toilet care products"/>
+                                <MenuItem Header="Air fresheners"/>
+                            </MenuItem>
+                            <MenuItem Header="Lighting">
+                                <MenuItem Header="Bulbs"/>
+                                <MenuItem Header="Table lamps"/>
+                                <MenuItem Header="Chandeliers"/>
+                                <MenuItem Header="Street Lighting"/>
+                                <MenuItem Header="Wall Lights"/>
+                                <MenuItem Header="Ceiling Lights"/>
+                                <MenuItem Header="Spotlights"/>
+                            </MenuItem>
+                            <MenuItem Header="Meters">
+                                <MenuItem Header="Protection against voltage fluctuations"/>
+                                <MenuItem Header="Water meters"/>
+                                <MenuItem Header="Gas meters"/>
+                                <MenuItem Header="Electricity meters"/>
+                            </MenuItem>
+                            <MenuItem Header="Clocks">
+                                <MenuItem Header="Wall clocks"/>
+                                <MenuItem Header="Desk clocks"/>
+                                <MenuItem Header="Wrist watches"/>
+                            </MenuItem>
+                            <MenuItem Header="Pet Products">
+                                <MenuItem Header="Goods for dogs"/>
+                                <MenuItem Header="Cat Products"/>
+                            </MenuItem>
+
+                        </MenuItem>
+
+                        <MenuItem Header="Cottage, garden">
+
+
+                        </MenuItem>
+
+
+                        <MenuItem Header="Sports and hobbies ">
+
+
+                        </MenuItem>
+
+
+                        <MenuItem Header="Clothes, shoes and jewelry">
+
+
+                        </MenuItem>
+
+                        <MenuItem Header="Beauty and health">
+
+
+                        </MenuItem>
+
+
+                        <MenuItem Header="Baby products">
+
+
+                        </MenuItem>
+
+
+
+                        <MenuItem Header="Animal products">
+
+
+                        </MenuItem>
+
+
+
+                        <MenuItem Header="Office, school, books">
+
+
+                        </MenuItem>
+
+
+                        <MenuItem Header="Household chemicals">
+
+
+                        </MenuItem>
+
+                    </MenuItem>
+                </Menu>
+            </Grid>
+
+            <!-- Сетка с товарами -->
+            <ScrollViewer Grid.Row="1">
+                <UniformGrid Columns="6" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20">
+                    <!-- Карточка товара -->
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
+                        <StackPanel>
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_144667576__1_-removebg-preview.png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter" />
+                            <TextBlock Text="APPLE iPhone 16 Pro Max 5G 256 GB Titanium Desert Sand Dual SIM" 
+                                       TextWrapping="Wrap" 
+                                     
+                                       HorizontalAlignment="Center" 
+                                       FontSize="14" FontWeight="Bold" 
+                                       Margin="5" FontFamily="Arial Rounded MT Bold" />
+
+                            <!-- Цена с красной обводкой -->
+                            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
+                                    HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
+                                <TextBlock Text="1599$" 
+                                           FontSize="16" 
+                                           Foreground="Black" 
+                                           Padding="5,2" 
+                                           HorizontalAlignment="Center" />
+
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Повторите Border для других товаров -->
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
+                        <StackPanel>
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ecoflow-delta-pro-3-portable-power-station-58715243872599_2000x-removebg-preview.png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter"/>
+                            <TextBlock Text="EcoFlow DELTA Pro 3 Portable Power Station" 
+                            TextWrapping="Wrap" 
+                            HorizontalAlignment="Center" 
+                            FontSize="14" FontWeight="Bold" 
+                            Margin="5" FontFamily="Arial Rounded MT Bold" />
+                            <!-- Цена с красной обводкой -->
+                            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
+                                    HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
+                                <TextBlock Text="3999$" 
+                            FontSize="16" 
+                            Foreground="Black" 
+                            Padding="5,2" 
+                            HorizontalAlignment="Center" />
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
+                        <StackPanel>
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_147279731-removebg-preview (1).png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter"/>
+                            <TextBlock Text="NINEBOT E2 DII Kick Ccooter E-Scooter (8.1 inch, black)" 
+                            TextWrapping="Wrap" 
+                            HorizontalAlignment="Center" 
+                            FontSize="14" FontWeight="Bold" 
+                            Margin="5" />
+                            <!-- Цена с красной обводкой -->
+                            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
+                                        HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
+                                <TextBlock Text="299$" 
+                            FontSize="16" 
+                            Foreground="Black" 
+                            Padding="5,2" 
+                            HorizontalAlignment="Center" />
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
+                        <StackPanel>
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_94547011-removebg-preview.png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter"/>
+                            <TextBlock Text="APPLE MacBook Air (2022), MLXW3D/A, Notebook With 13" 
+                            TextWrapping="Wrap" 
+                            HorizontalAlignment="Center" 
+                            FontSize="14" FontWeight="Bold" 
+                            Margin="5" />
+                            <!-- Цена с красной обводкой -->
+                            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
+                                    HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
+                                <TextBlock Text="1599$" 
+                                FontSize="16" 
+                                Foreground="Black" 
+                                Padding="5,2" 
+                                HorizontalAlignment="Center" />
+                            </Border>
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
+                        <StackPanel>
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_136489488-removebg-preview.png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter"/>
+                            <TextBlock Text="IGLOO IE24 AC/DC Cool Box (24 l, 12V Connection, 24 l, Ice Blue)" 
+                            TextWrapping="Wrap" 
+                            HorizontalAlignment="Center" 
+                            FontSize="14" FontWeight="Bold" 
+                            Margin="5" />
+                            <!-- Цена с красной обводкой -->
+                            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
+                                HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
+                                <TextBlock Text="1599$" 
+                            FontSize="16" 
+                            Foreground="Black" 
+                            Padding="5,2" 
+                            HorizontalAlignment="Center" />
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
+                            </Border>
+
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
+                        <StackPanel>
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_87346072-removebg-preview.png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter"/>
+                            <TextBlock Text="APPLE iPhone 13 128 GB Midnight Dual SIM" 
+                            TextWrapping="Wrap" 
+                            HorizontalAlignment="Center" 
+                            FontSize="14" FontWeight="Bold" 
+                            Margin="5" FontFamily="Arial Rounded MT Bold" />
+                            <!-- Цена с красной обводкой -->
+                            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
+                                HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
+                                <TextBlock Text="1599$" 
+                            FontSize="16" 
+                            Foreground="Black" 
+                            Padding="5,2" 
+                            HorizontalAlignment="Center" />
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
+                            </Border>
+
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
+                        <StackPanel>
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_133481994-removebg-preview.png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter"/>
+                            <TextBlock Text="KOENIC KFK 631-1 C IN Cooling Combi Static (C, 315 l, 1858 mm high, Inox)" 
+                            TextWrapping="Wrap" 
+                            HorizontalAlignment="Center" 
+                            FontSize="14" FontWeight="Bold" 
+                            Margin="5" FontFamily="Arial Rounded MT Bold" />
+                            <!-- Цена с красной обводкой -->
+                            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
+                                HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
+                                <TextBlock Text="1599$" 
+                            FontSize="16" 
+                            Foreground="Black" 
+                            Padding="5,2" 
+                            HorizontalAlignment="Center" />
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
+                            </Border>
+
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
+                        <StackPanel>
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MP_147824921-removebg-preview.png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter"/>
+                            <TextBlock Text="MEGAPORT Gaming PC Intel Core i9 12900F" 
+                            TextWrapping="Wrap" 
+                            HorizontalAlignment="Center" 
+                            FontSize="14" FontWeight="Bold" 
+                            Margin="5" FontFamily="Arial Rounded MT Bold" />
+                            <!-- Цена с красной обводкой -->
+                            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
+                                HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
+                                <TextBlock Text="1599$" 
+                            FontSize="16" 
+                            Foreground="Black" 
+                            Padding="5,2" 
+                            HorizontalAlignment="Center" />
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
+                            </Border>
+
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
+                        <StackPanel>
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_91714553-removebg-preview.png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter"/>
+                            <TextBlock Text="AOC C27G2ZE 27-inch Full HD Gaming Monitor" 
+                            TextWrapping="Wrap" 
+                            HorizontalAlignment="Center" 
+                            FontSize="14" FontWeight="Bold" 
+                            Margin="5" FontFamily="Arial Rounded MT Bold" Focusable="True" />
+                            <!-- Цена с красной обводкой -->
+                            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
+                                HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
+                                <TextBlock Text="1599$" 
+                            FontSize="16" 
+                            Foreground="Black" 
+                            Padding="5,2" 
+                            HorizontalAlignment="Center" />
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
+                            </Border>
+
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
+                        <StackPanel>
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_123665713-removebg-preview.png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter"/>
+                            <TextBlock Text="META 899-00582-01 Quest 3 128 GB VR Headset" 
+                            TextWrapping="Wrap" 
+                            HorizontalAlignment="Center" 
+                            FontSize="14" FontWeight="Bold" 
+                            Margin="5" FontFamily="Arial Rounded MT Bold" />
+                            <!-- Цена с красной обводкой -->
+                            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
+                                HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
+                                <TextBlock Text="1599$" 
+                            FontSize="16" 
+                            Foreground="Black" 
+                            Padding="5,2" 
+                            HorizontalAlignment="Center" />
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
+                            </Border>
+
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
+                        <StackPanel>
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_141737328-removebg-preview.png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter"/>
+                            <TextBlock Text="ASUS ROG Ally X RC72LA-NH007W, Gaming Handheld" 
+                            TextWrapping="Wrap" 
+                            HorizontalAlignment="Center" 
+                            FontSize="14" FontWeight="Bold" 
+                            Margin="5" FontFamily="Arial Rounded MT Bold" />
+                            <!-- Цена с красной обводкой -->
+                            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
+                                HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
+                                <TextBlock Text="1599$" 
+                            FontSize="16" 
+                            Foreground="Black" 
+                            Padding="5,2" 
+                            HorizontalAlignment="Center" />
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
+                            </Border>
+
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
+                        <StackPanel>
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MP_142287364-removebg-preview.png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter"/>
+                            <TextBlock Text="SAMSUNG UE55DU7172U TV (Flat, 55 inch / 139.70 cm, UHD 4K, SMART TV)" 
+                            TextWrapping="Wrap" 
+                            HorizontalAlignment="Center" 
+                            FontSize="14" FontWeight="Bold" 
+                            Margin="5" FontFamily="Arial Rounded MT Bold" />
+                            <!-- Цена с красной обводкой -->
+                            <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
+                                HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
+                                <TextBlock Text="1599$" 
+                            FontSize="16" 
+                            Foreground="Black" 
+                            Padding="5,2" 
+                            HorizontalAlignment="Center" />
+                            </Border>
+
+                            <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
+                            </Border>
+                            
+                        </StackPanel>
+                    
+                    
+                    </Border>
+                
+                
+                </UniformGrid>
+            
+            </ScrollViewer>
+           
+        </Grid>
+    </Grid>
+</Window>

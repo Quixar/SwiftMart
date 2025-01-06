@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -12,13 +16,12 @@ using System.Windows.Shapes;
 namespace SwiftMart
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для OrderControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OrderControl : UserControl
     {
-        public MainWindow()
+        public OrderControl()
         {
-
             InitializeComponent();
         }
     }
