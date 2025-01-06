@@ -6,13 +6,11 @@
         xmlns:viewModel="clr-namespace:SwiftMart.ViewModel"
         mc:Ignorable="d"
         Title="RegistrationAuthorization" Height="1080" Width="1920">
-    
+
     <Window.DataContext>
         <viewModel:UserViewModel x:Name="VM"/>
     </Window.DataContext>
-
     <Grid>
-        
         <!-- Форма авторизации -->
         <Grid Name="LoginForm">
             <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
@@ -40,7 +38,7 @@
 
                         <Label Content="Please enter your e-mail" FontSize="9"/>
                         <!-- Поля ввода -->
-                        <TextBox Name="AuthorizationEmailTextBox" Text="Email" Height="35" Width="240" Margin="0,0,0,10" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus">
+                        <TextBox Name="AuthorizationEmailTextBox" Text="{Binding Email}" Height="35" Width="240" Margin="0,0,0,10" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus">
 
                             <TextBox.Foreground>
                                 <SolidColorBrush Color="#80000000" />
@@ -48,7 +46,7 @@
 
                         </TextBox>
                         <Label Content="Please enter your password" FontSize="9"/>
-                        <PasswordBox Height="35" Width="240" Margin="0,0,0,20"/>
+                        <PasswordBox Name="Autorization" Height="35" Width="240" Margin="0,0,0,20"/>
 
                         <!-- Кнопка Авторизации -->
                         <Button Content="Authorize" 
@@ -58,7 +56,7 @@
                         Width="240" 
                         HorizontalAlignment="Center"
                         FontWeight="Bold"
-                        Margin="0,0,0,10"/>
+                        Margin="0,0,0,10" Click="Button_Click_1" Command="{Binding LoginCommand}"/>
 
                         <!-- Ссылка на регистрацию -->
                         <TextBlock Text="Register"
@@ -124,7 +122,7 @@
                         </TextBox>
 
                         <Label Content="Please make up a password" FontSize="9"/>
-                        <PasswordBox Height="35" Width="240" Margin="0,0,0,10" />
+                        <PasswordBox x:Name="MyPasswordBox" Height="35" Width="240" Margin="0,0,0,10" />
 
                         <Label Content="Please enter your address" FontSize="9"/>
                         <TextBox Name="RegistrationAddressTextBox" Text="{Binding Address}" Height="35" Width="240" Margin="0,0,0,20" GotFocus="RegistrationAddressTextBox_GotFocus" LostFocus="RegistrationAddressTextBox_LostFocus">
@@ -141,7 +139,7 @@
                         Height="40" 
                         Width="240" 
                         HorizontalAlignment="Center"
-                        FontWeight="Bold" Click="Button_Click"/>
+                        FontWeight="Bold" Click="Button_Click" Command="{Binding RegisterCommand}"/>
                         <TextBlock Text="Back to Login" Foreground="#0078D7" Cursor="Hand" TextDecorations="Underline"  HorizontalAlignment="Center" Margin="0,20" MouseLeftButtonDown="BackToLogin_Click"/>
                     </StackPanel>
                 </Border>

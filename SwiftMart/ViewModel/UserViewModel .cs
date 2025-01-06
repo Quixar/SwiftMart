@@ -1,5 +1,14 @@
-﻿using System.ComponentModel;
+﻿using SwiftMart.Commands;
+using SwiftMart.DataBase;
+using SwiftMart.EmailTools;
+using SwiftMart.Hash;
+using SwiftMart.Sessions;
+using SwiftMart.UserEntities;
+using SwiftMart.Validations;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows;
+using System.Windows.Input;
 
 namespace SwiftMart.ViewModel
 {
@@ -12,6 +21,19 @@ namespace SwiftMart.ViewModel
         private string password;
         private string address;
         private string role;
+        private readonly Context context;
+        private readonly CustomerValidator userValidator;
+        public ICommand RegisterCommand { get; }
+        public ICommand LoginCommand { get; }
+
+        public UserViewModel()
+        {
+            context = new Context();
+            userValidator = new CustomerValidator(context);
+
+            RegisterCommand = new AsyncRelayCommand(Register);
+            LoginCommand = new RelayCommand(Login);
+        }
 
         public int Id
         {
@@ -55,7 +77,7 @@ namespace SwiftMart.ViewModel
             set => SetProperty(ref role, value);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -74,12 +96,73 @@ namespace SwiftMart.ViewModel
 
         private void Login(object parameter)
         {
-            
+            if (userValidator.ValidateLogin(email, password, out string errorMessage))
+            {
+                MessageBox.Show("Login successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                OpenHomeShop();
+            }
+            else
+            {
+                MessageBox.Show(errorMessage, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
-        private void Register(object parameter)
+        private async Task Register()
         {
-            
+            if (userValidator.ValidateRegistration(Name, Lastname, Email, Password, Address, out string errorMessage))
+            {
+                string hashedPassword = PasswordHasher.HashPassword(Password);
+
+                var newCustomer = new Customer
+                {
+                    Name = Name,
+                    Lastname = Lastname,
+                    Email = Email,
+                    Password = hashedPassword,
+                    Address = Address,
+                    Role = "User"
+                };
+
+                context.Customers.Add(newCustomer);
+                context.SaveChanges();
+
+                try
+                {
+                    var emailService = new EmailService();
+                    await emailService.Sender(Email, Name);
+                    MessageBox.Show("Registration successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    
+                    CustomerSession.Instance.Id = newCustomer.Id;
+                    CustomerSession.Instance.Address = newCustomer.Address;
+                    CustomerSession.Instance.Name = newCustomer.Name;
+
+                    OpenHomeShop();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error sending email: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show(errorMessage, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void OpenHomeShop()
+        {
+            var currentWindow = Application.Current.Windows.OfType<Window>().First(w => w.IsActive);
+            currentWindow.Visibility = Visibility.Hidden;
+
+            try
+            {
+                var homeShop = new HomeShop();
+                homeShop.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error opening HomeShop: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

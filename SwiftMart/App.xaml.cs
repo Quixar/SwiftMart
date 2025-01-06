@@ -9,6 +9,6 @@ namespace SwiftMart
     /// </summary>
     public partial class App : Application
     {
-    }
 
+    }
 }

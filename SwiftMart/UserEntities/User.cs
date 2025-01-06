@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace SwiftMart.UserEntities
 {
-    public class User
+    [Index(nameof(Email), IsUnique = true)]
+    public partial class User
     {
+        [Key]
         public int Id { get; set; }
         public string? Name { get; set; }
         public string? Lastname { get; set; }
         public string? Email { get; set; }
-        public char Password { get; set; }
+        public string? Password { get; set; }
         public string? Address { get; set; }
         public string? Role { get; set; }
     }

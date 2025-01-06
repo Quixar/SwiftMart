@@ -1,0 +1,110 @@
+﻿<Window x:Class="SwiftMart.ShoppingCart"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SwiftMart"
+        mc:Ignorable="d"
+        Title="ShoppingCart" Height="1080" Width="1920">
+    <Grid Background="White">
+        <!-- Верхний красный бар -->
+        <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="320" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="225" />
+                <ColumnDefinition Width="321" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Логотип -->
+            <Image Grid.Column="0" Margin="61,13,61,22" Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill"/>
+
+            <!-- Поиск -->
+            <Border CornerRadius="10" BorderBrush="Black" BorderThickness="2" Background="LightGray" Padding="2" Grid.Column="1" Margin="303,35,77,35">
+
+                <TextBox Background="Transparent" BorderThickness="0" VerticalAlignment="Top" Text="Search" Margin="6,4,14,0" FontFamily="Arial" />
+            </Border>
+
+            <!--<Button BorderThickness="0" Grid.Column="2" VerticalAlignment="Center" Width="40" Height="40" Background="#EA6767" Margin="0,10,10,10">
+         <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\round-account-button-with-user-inside_icon-icons.com_72596.png" Stretch="Fill" RenderTransformOrigin="1.944,-3.166" />
+     </Button>-->
+
+            <!--<Button BorderThickness="0" Grid.Column="2" VerticalAlignment="Center" Width="40" Height="40" Background="#EA6767" Margin="0,10,7,10">
+         <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\751463-removebg-preview.png" Stretch="Fill" RenderTransformOrigin="1.944,-3.166" />
+     </Button>-->
+
+            <!-- Иконка корзины -->
+            <!--<Button BorderThickness="0" Grid.Column="3" Width="40" Height="40" Background="#EA6767" VerticalAlignment="Center" Margin="10,10,0,10">
+         <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\1490129319-rounded09_82169.png" Stretch="Fill"/>
+     </Button>-->
+
+
+            <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="219,0,49,0">
+                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\round-account-button-with-user-inside_icon-icons.com_72596.png" Stretch="Fill" RenderTransformOrigin="-1.878,0.467" Height="55"/>
+            </Button>
+
+            <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="84,0,186,0">
+                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\1490129319-rounded09_82169.png" Stretch="Fill"  RenderTransformOrigin="2.732,0.513"/>
+            </Button>
+        </Grid>
+
+        <!-- Основной контент -->
+        <Grid Margin="10,200,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Список товаров -->
+            <StackPanel Grid.Column="0" Margin="10">
+                <TextBlock Text="Cart (1)" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />
+                <Border Background="#F0F0F0" CornerRadius="5" Padding="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <!-- Изображение товара -->
+                        <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_144667576__1_-removebg-preview.png" Width="100" Height="100" Grid.Column="0" />
+                        <!-- Информация о товаре -->
+                        <StackPanel Grid.Column="1" Margin="10,0">
+                            <TextBlock Text="APPLE iPhone 13 128 GB Midnight Dual SIM" FontSize="14" FontWeight="Bold" />
+                            <TextBlock Text="$539.00" FontSize="16" Foreground="Black" Margin="0,10,0,0" />
+                        </StackPanel>
+                        <!-- Количество -->
+                        <StackPanel Grid.Column="2" HorizontalAlignment="Right">
+                            <Button Content="♥" Background="White" />
+                            <ComboBox Width="50" SelectedIndex="0">
+                                <ComboBoxItem Content="1" />
+                                <ComboBoxItem Content="2" />
+                                <ComboBoxItem Content="3" />
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </StackPanel>
+
+            <!-- Резюме -->
+            <StackPanel Grid.Column="1" Margin="10">
+                <Border Background="#F0F0F0" CornerRadius="5" Padding="10">
+                    <StackPanel>
+                        <TextBlock Text="Summary" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" />
+                        <TextBlock Text="Shipping fee: $5.43" FontSize="14" />
+                        <TextBlock Text="Total: $544.43" FontSize="16" FontWeight="Bold" Margin="0,10,0,0" />
+                        <Button Content="Checkout (1)" Background="#F05C5C" Foreground="White" Height="40" Margin="0,10,0,0" />
+                    </StackPanel>
+                </Border>
+
+                <!-- Дополнительная информация -->
+                <Border Background="#F0F0F0" CornerRadius="5" Padding="10" Margin="0,10,0,0">
+                    <StackPanel>
+                        <TextBlock Text="✔ Fast delivery" FontSize="12" Margin="0,5,0,0" />
+                        <TextBlock Text="✔ Security and Privacy" FontSize="12" Margin="0,5,0,0" />
+                        <TextBlock Text="✔ Safe Payments" FontSize="12" Margin="0,5,0,0" />
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

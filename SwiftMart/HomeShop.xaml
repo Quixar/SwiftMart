@@ -25,21 +25,7 @@
                 <TextBox Background="Transparent" BorderThickness="0" VerticalAlignment="Top" Text="Search" Margin="6,4,14,0" FontFamily="Arial" />
             </Border>
 
-            <!--<Button BorderThickness="0" Grid.Column="2" VerticalAlignment="Center" Width="40" Height="40" Background="#EA6767" Margin="0,10,10,10">
-                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\round-account-button-with-user-inside_icon-icons.com_72596.png" Stretch="Fill" RenderTransformOrigin="1.944,-3.166" />
-            </Button>-->
-
-            <!--<Button BorderThickness="0" Grid.Column="2" VerticalAlignment="Center" Width="40" Height="40" Background="#EA6767" Margin="0,10,7,10">
-                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\751463-removebg-preview.png" Stretch="Fill" RenderTransformOrigin="1.944,-3.166" />
-            </Button>-->
-
-            <!-- Иконка корзины -->
-            <!--<Button BorderThickness="0" Grid.Column="3" Width="40" Height="40" Background="#EA6767" VerticalAlignment="Center" Margin="10,10,0,10">
-                <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\1490129319-rounded09_82169.png" Stretch="Fill"/>
-            </Button>-->
-
-
-            <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="219,0,49,0">
+            <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="219,0,49,0" Click="Button_Click_1">
                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\round-account-button-with-user-inside_icon-icons.com_72596.png" Stretch="Fill" RenderTransformOrigin="-1.878,0.467" Height="55"/>
             </Button>
 
@@ -813,11 +799,17 @@
                             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
                             </Border>
-
+                            
                         </StackPanel>
+                    
+                    
                     </Border>
+                
+                
                 </UniformGrid>
+            
             </ScrollViewer>
+           
         </Grid>
     </Grid>
 </Window>

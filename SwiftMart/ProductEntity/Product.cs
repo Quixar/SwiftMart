@@ -1,5 +1,4 @@
-﻿using SwiftMart.CategoryEntity;
-using SwiftMart.ReviewEntity;
+﻿using SwiftMart.ReviewEntity;
 
 namespace SwiftMart.Products
 {
