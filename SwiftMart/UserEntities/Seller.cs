@@ -1,5 +1,4 @@
 ﻿using SwiftMart.ProductEntity;
-using SwiftMart.Products;
 using SwiftMart.StatisticEntities;
 using System;
 using System.Collections.Generic;

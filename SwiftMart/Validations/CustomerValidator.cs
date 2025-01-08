@@ -12,11 +12,10 @@ namespace SwiftMart.Validations
             this.context = context;
         }
 
-        public bool ValidateRegistration(string name, string lastName, string email, string password, string address, out string errorMessage)
+        public bool ValidateRegistration(string name, string lastName, string email, string password, out string errorMessage)
         {
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(lastName) ||
-                string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password) ||
-                string.IsNullOrWhiteSpace(address))
+                string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
                 errorMessage = "Please fill in all the fields.";
                 return false;
@@ -28,7 +27,7 @@ namespace SwiftMart.Validations
                 return false;
             }
 
-            if (context.Users.Any(u => u.Email == email))
+            if (context.Customers.Any(u => u.Email == email))
             {
                 errorMessage = "Email is already registered.";
                 return false;

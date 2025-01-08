@@ -1,4 +1,4 @@
-﻿using SwiftMart.Products;
+﻿using SwiftMart.ProductEntity;
 using System.Security.Cryptography.X509Certificates;
 
 namespace SwiftMart.Accounts

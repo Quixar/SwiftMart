@@ -68,9 +68,8 @@
                         </Style>
                     </Menu.Resources>
 
-                    <!-- Основные категории -->
                     <MenuItem Header="All Categories" Width="205" FontFamily="Arial">
-                        <!-- Вложенные пункты меню -->
+                   
                         <MenuItem Header="Laptops and Computers" Background="#D40000">
                             <MenuItem Header="Laptops">
                                 <MenuItem Header="Asus" />

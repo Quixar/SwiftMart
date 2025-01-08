@@ -26,7 +26,7 @@
     
                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\round-account-button-with-user-inside_icon-icons.com_72596.png" Width="55" Height="55" Margin="0,0,10,0" />
                 <StackPanel>
-                    <TextBlock Text="Name User" FontWeight="Bold" FontSize="20" Margin="0,0,0,5"/>
+                    <TextBlock x:Name="UserSessionName" FontWeight="Bold" FontSize="20" Margin="0,0,0,5"/>
                     
                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                         <TextBlock Text="Favorites" />
@@ -50,7 +50,7 @@
 
                     <Button Width="100" Height="100" Margin="5">
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="D:\Ресурсы для Swift Mart\Ресурсы для Swift Mart\icons8-бумажник-64.png" Width="40" Height="40" />
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\wallet_icon-icons.com_64826.png" Width="40" Height="40" />
                             <TextBlock Text="Need to Pay" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
                         </StackPanel>
                     </Button>
@@ -60,7 +60,7 @@
 
                     <Button Width="100" Height="100" Margin="5">
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="D:\Ресурсы для Swift Mart\Ресурсы для Swift Mart\icons8-тележка-50.png" Width="40" Height="40" />
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\trolley5_122333.png" Width="40" Height="40" />
                             <TextBlock Text="Ready for Shipment" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
                         </StackPanel>
                     </Button>
@@ -70,7 +70,7 @@
 
                     <Button Width="100" Height="100" Margin="5">
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="D:\Ресурсы для Swift Mart\Ресурсы для Swift Mart\icons8-заказ-в-пути-50.png" Width="40" Height="40" />
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\3615733-delivery-domestic-ems-express-global-logistics-package-shipping_107913.png" Width="40" Height="40" />
                             <TextBlock Text="En Route" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
                         </StackPanel>
                     </Button>
@@ -80,7 +80,7 @@
 
                     <Button Width="100" Height="100" Margin="5">
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="D:\Ресурсы для Swift Mart\Ресурсы для Swift Mart\icons8-данные-доставлены-50 (1).png" Width="40" Height="40" />
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\package3_122406.png" Width="40" Height="40" />
                             <TextBlock Text="Arrived" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
                         </StackPanel>
                     </Button>
@@ -90,7 +90,7 @@
 
                     <Button Width="100" Height="100" Margin="5">
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Image Source="D:\Ресурсы для Swift Mart\Ресурсы для Swift Mart\icons8-логистика-64.png" Width="40" Height="40" />
+                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\commerce_online_buy_store_business_box_product_item_icon_219867.png" Width="40" Height="40" />
                             <TextBlock Text="View All" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
                         </StackPanel>
                     </Button>

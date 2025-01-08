@@ -1,4 +1,4 @@
-﻿using SwiftMart.Products;
+﻿using SwiftMart.ProductEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

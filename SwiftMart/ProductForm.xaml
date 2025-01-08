@@ -7,39 +7,35 @@
             mc:Ignorable="d"
             Title="Product" Height="1080" Width="1920">
         <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <Grid>
+        <Grid>
+            <!-- Верхний красный бар -->
+            <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="2196*"/>
-                    <ColumnDefinition Width="197*"/>
+                    <ColumnDefinition Width="320" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="225" />
+                    <ColumnDefinition Width="321" />
                 </Grid.ColumnDefinitions>
-                <!-- Верхний красный бар -->
-                <Grid Background="#EA6767" Height="100" VerticalAlignment="Top" RenderTransformOrigin="0.912,0.478" Grid.ColumnSpan="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="50" />
-                    </Grid.ColumnDefinitions>
 
-                    <!-- Логотип -->
-                    <Image Grid.Column="0" Height="65" Margin="28,18,1518,18" Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill" Grid.ColumnSpan="2"/>
+                <!-- Логотип -->
+                <Image Grid.Column="0" Margin="61,13,61,22" Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill"/>
 
-                    <!-- Поиск -->
-                    <Border Width="720" CornerRadius="10" BorderBrush="Black" BorderThickness="2" Background="LightGray" Padding="2" Grid.Column="1" Margin="264,36,508,34">
-                        <TextBox Background="Transparent" BorderThickness="0" VerticalAlignment="Center" Text="Search" Margin="6,0,14,0" />
-                    </Border>
+                <!-- Поиск -->
+                <Border CornerRadius="10" BorderBrush="Black" BorderThickness="2" Background="LightGray" Padding="2" Grid.Column="1" Margin="303,35,77,35">
 
-                    <Button BorderThickness="0" Grid.Column="2" VerticalAlignment="Center" Width="40" Height="40" Background="#EA6767">
-                        <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\751463-removebg-preview.png" Stretch="Fill" RenderTransformOrigin="1.944,-3.166" />
-                    </Button>
+                    <TextBox Background="Transparent" BorderThickness="0" VerticalAlignment="Top" Text="Search" Margin="6,4,14,0" FontFamily="Arial" />
+                </Border>
 
-                    <!-- Иконка корзины -->
-                    <Button BorderThickness="0" Grid.Column="3" Width="40" Height="40" Background="#EA6767" VerticalAlignment="Center">
-                        <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\1490129319-rounded09_82169.png" Stretch="Fill"/>
-                    </Button>
-                </Grid>
+                <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="219,0,49,0" Click="Button_Click_1">
+                    <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\round-account-button-with-user-inside_icon-icons.com_72596.png" Stretch="Fill" RenderTransformOrigin="-1.878,0.467" Height="55"/>
+                </Button>
 
-                <!-- Категории и основное содержимое -->
+                <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="84,0,186,0" Click="Button_Click_2">
+                    <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\1490129319-rounded09_82169.png" Stretch="Fill"  RenderTransformOrigin="2.732,0.513"/>
+                </Button>
+            </Grid>
+
+            <!-- Категории и основное содержимое -->
                 <Grid Margin="0,100,0,0" Grid.ColumnSpan="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60" />

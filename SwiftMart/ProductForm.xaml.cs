@@ -55,5 +55,19 @@ namespace SwiftMart
             returnProduct.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var userPage = new UserPage();
+            userPage.Show();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var shoppingCart = new ShoppingCart();
+            shoppingCart.Show();
+            this.Close();
+        }
     }
 }

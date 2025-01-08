@@ -13,20 +13,8 @@
             <TextBlock Text="Shipping Address" FontSize="20" FontWeight="Bold" Margin="10" />
 
             <!-- Список адресов -->
-            <WrapPanel Margin="10" HorizontalAlignment="Left">
-                <!-- Адрес -->
-                <Border Width="300" Height="150" Background="#F5F5F5" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="5" Margin="10">
-                    <StackPanel Margin="10">
-                        <TextBlock Text="Muhammad Lodi" FontWeight="Bold" FontSize="14" />
-                        <TextBlock Text="Spacehouse 1, Station St, Birmingham" FontSize="12" Foreground="Gray" />
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
-                            <Button Content="Edit" Margin="5" />
-                            <Button Content="Delete" Margin="5" />
-                        </StackPanel>
-                    </StackPanel>
-                </Border>
-
-                <!-- Кнопка добавления нового адреса -->
+            <WrapPanel Margin="10" Name="AddressesPanel" HorizontalAlignment="Left">
+                
                 <Border Width="300" Height="150" Background="#F5F5F5" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="5" Margin="10">
                     <Button Content="+ Add new Address" Background="Transparent" BorderThickness="0" FontSize="16" Foreground="Black" Click="Button_Click"/>
                 </Border>
@@ -37,13 +25,12 @@
                 <StackPanel>
                     <TextBlock Text="Add new address" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" />
 
-                    <ComboBox Text="Country/Region" Margin="0,5,0,5" />
-                    <TextBox Text="First Name" Margin="0,5,0,5" />
-                    <TextBox Text="Last Name" Margin="0,5,0,5" />
-                    <TextBox Text="Mobile Number" Margin="0,5,0,5" />
-                    <TextBox Text="Street Address" Margin="0,5,0,5" />
-                    <TextBox Text="City" Margin="0,5,0,5" />
-                    <TextBox Text="ZIP Code" Margin="0,5,0,5" />
+                    <TextBox Text="Country" Name="Country" Margin="0,5,0,5" />
+                    <TextBox Text="City" Name="City" Margin="0,5,0,5" />
+                    <TextBox Text="Street Name" Name="StreetName" Margin="0,5,0,5" />
+                    <TextBox Text="House Number" Name="HouseNumber" Margin="0,5,0,5" />
+                    <TextBox Text="Apartament Number" Name="ApartamentNumber" Margin="0,5,0,5" />
+                    <TextBox Text="Post Code" Name="PostCode" Margin="0,5,0,5" />
 
                     <Button Content="Save" Background="Black" Foreground="White" HorizontalAlignment="Center" Width="80" Margin="10,20,10,0" Click="Button_Click_1" />
                 </StackPanel>

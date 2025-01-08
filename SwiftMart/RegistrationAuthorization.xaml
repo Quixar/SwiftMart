@@ -10,8 +10,9 @@
     <Window.DataContext>
         <viewModel:UserViewModel x:Name="VM"/>
     </Window.DataContext>
+    
     <Grid>
-        <!-- Форма авторизации -->
+
         <Grid Name="LoginForm">
             <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
                 <Grid.ColumnDefinitions>
@@ -24,11 +25,10 @@
             </Grid>
 
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <!-- Серый фон блока -->
+
                 <Border Background="#E0E0E0" CornerRadius="10" Padding="30" Width="300" Height="350">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10">
 
-                        <!-- Заголовок -->
                         <TextBlock Text="LOG IN" 
                        FontSize="22" 
                        FontWeight="Bold" 
@@ -37,7 +37,7 @@
                        Foreground="Black"/>
 
                         <Label Content="Please enter your e-mail" FontSize="9"/>
-                        <!-- Поля ввода -->
+         
                         <TextBox Name="AuthorizationEmailTextBox" Text="{Binding Email}" Height="35" Width="240" Margin="0,0,0,10" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus">
 
                             <TextBox.Foreground>
@@ -48,7 +48,6 @@
                         <Label Content="Please enter your password" FontSize="9"/>
                         <PasswordBox Name="Autorization" Height="35" Width="240" Margin="0,0,0,20"/>
 
-                        <!-- Кнопка Авторизации -->
                         <Button Content="Authorize" 
                         Background="Black" 
                         Foreground="White" 
@@ -58,7 +57,7 @@
                         FontWeight="Bold"
                         Margin="0,0,0,10" Click="Button_Click_1" Command="{Binding LoginCommand}"/>
 
-                        <!-- Ссылка на регистрацию -->
+                
                         <TextBlock Text="Register"
                        HorizontalAlignment="Center"
                        Foreground="#0078D7"
@@ -69,7 +68,7 @@
                 </Border>
             </Grid>
         </Grid>
-        <!-- Форма регистрации -->
+        
         <Grid Name="RegisterForm" Visibility="Collapsed">
             <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
                 <Grid.ColumnDefinitions>
@@ -80,12 +79,12 @@
                 </Grid.ColumnDefinitions>
                 <Image Grid.Column="0" Margin="61,13,61,22" Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill"/>
             </Grid>
-            <!-- Основной контейнер для регистрации -->
+
             <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                <!-- Серый фон блока -->
+
                 <Border Background="#E0E0E0" CornerRadius="10" Padding="30" Width="300" Height="550">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10">
-                        <!-- Заголовок -->
+
                         <TextBlock Text="Registration" 
                        FontSize="22" 
                        FontWeight="Bold" 
@@ -93,7 +92,6 @@
                        Margin="0,0,0,20"
                        Foreground="Black"/>
 
-                        <!-- Поля ввода -->
                         <Label Content="Please enter your name" FontSize="9"/>
                         <TextBox Name="RegistrationNameTextBox" Text="{Binding Name}" Height="35" Width="240" Margin="0,0,0,10" GotFocus="RegistrationNameTextBox_GotFocus" LostFocus="RegistrationNameTextBox_LostFocus">
 
@@ -124,15 +122,6 @@
                         <Label Content="Please make up a password" FontSize="9"/>
                         <PasswordBox x:Name="MyPasswordBox" Height="35" Width="240" Margin="0,0,0,10" />
 
-                        <Label Content="Please enter your address" FontSize="9"/>
-                        <TextBox Name="RegistrationAddressTextBox" Text="{Binding Address}" Height="35" Width="240" Margin="0,0,0,20" GotFocus="RegistrationAddressTextBox_GotFocus" LostFocus="RegistrationAddressTextBox_LostFocus">
-
-                            <TextBox.Foreground>
-                                <SolidColorBrush Color="#80000000" />
-                            </TextBox.Foreground>
-
-                        </TextBox>
-                        <!-- Кнопка регистрации -->
                         <Button Content="Register" 
                         Background="Black" 
                         Foreground="White" 
