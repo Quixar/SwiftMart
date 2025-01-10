@@ -12,9 +12,8 @@ namespace SwiftMart.UserEntities
         [Key]
         public int Id { get; set; }
         public Cart? Cart { get; set; }
-        public List<Order>? Orders { get; set; }
+        public ICollection<Order> OrderHistory { get; set; } = new List<Order>();
         public Wishlist? Wishlist { get; set; }
-        public Address? Address { get; set; }
 
         //public void BuyProduct(Product product)
         //{

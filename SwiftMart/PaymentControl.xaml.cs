@@ -1,6 +1,6 @@
 ﻿using SwiftMart.BankCard;
-using SwiftMart.DataBase;
 using SwiftMart.Hash;
+using SwiftMart.Services;
 using SwiftMart.Sessions;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,20 +13,18 @@ namespace SwiftMart
     /// </summary>
     public partial class PaymentControl : UserControl
     {
-        private Context context;
+        private CardService cardService;
 
         public PaymentControl()
         {
-            context = new Context();
+            cardService = new CardService();
             InitializeComponent();
             DisplayUserCards();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddCardDialog.Visibility = Visibility.Visible;
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             AddCardDialog.Visibility = Visibility.Collapsed;
@@ -47,12 +45,12 @@ namespace SwiftMart
                         CustomerId = CustomerSession.Instance.Id,
                         CardNumber = CardNumber.Text,
                         NameOnCard = NameOnCard.Text,
-                        Date = expiryDate,
+                        ExpirationDate = expiryDate,
                         CVV = cvv
                     };
 
-                    context.Cards.Add(card);
-                    context.SaveChanges();
+                    cardService.SaveCard(card);
+                    DisplayUserCards();
                 }
                 catch (Exception ex)
                 {
@@ -60,17 +58,13 @@ namespace SwiftMart
                 }
             }
         }
-
         private void DisplayUserCards()
         {
-            int userId = CustomerSession.Instance.Id; // Получаем ID текущего пользователя.
-            List<Card> userCards = GetUserCards(userId); // Получаем список карт пользователя.
+            var userCards = cardService.GetUserCards(CustomerSession.Instance.Id);
 
-            // Очистим текущий список в WrapPanel перед обновлением.
             WrapPanel cardsPanel = (WrapPanel)FindName("CardsPanel");
             cardsPanel.Children.Clear();
 
-            // Добавляем карты в WrapPanel.
             foreach (var card in userCards)
             {
                 var cardBorder = new Border
@@ -95,7 +89,7 @@ namespace SwiftMart
 
                 stackPanel.Children.Add(new TextBlock
                 {
-                    Text = "VISA", // Здесь можно уточнить тип карты, если есть соответствующие данные.
+                    Text = "VISA",
                     FontSize = 12,
                     Foreground = new SolidColorBrush(Colors.Gray),
                     Margin = new Thickness(10, 0, 0, 0)
@@ -105,7 +99,6 @@ namespace SwiftMart
                 cardsPanel.Children.Add(cardBorder);
             }
 
-            // Добавляем кнопку для добавления новой карты.
             var addCardBorder = new Border
             {
                 Width = 200,
@@ -131,15 +124,9 @@ namespace SwiftMart
 
             cardsPanel.Children.Add(addCardBorder);
         }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             AddCardDialog.Visibility = Visibility.Collapsed;
-        }
-
-        private List<Card> GetUserCards(int userId)
-        {
-            return context.Cards.Where(card => card.CustomerId == userId).ToList();
         }
     }
 }

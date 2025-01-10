@@ -1,5 +1,7 @@
 ﻿using SwiftMart.DataBase;
+using SwiftMart.Services;
 using SwiftMart.Sessions;
+using SwiftMart.Validations;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -12,10 +14,14 @@ namespace SwiftMart
     public partial class ShippingAddressControl : UserControl
     {
         private readonly Context context;
+        private readonly AddressService addressService;
+        private AddressValidator addressValidator;
 
         public ShippingAddressControl()
         {
+            addressValidator = new AddressValidator();
             context = new Context();
+            addressService = new AddressService();
             InitializeComponent();
             DisplayUserAddresses();
         }
@@ -38,13 +44,7 @@ namespace SwiftMart
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(Country.Text) || string.IsNullOrWhiteSpace(City.Text) ||
-            string.IsNullOrWhiteSpace(StreetName.Text) || string.IsNullOrWhiteSpace(HouseNumber.Text) ||
-            string.IsNullOrWhiteSpace(PostCode.Text))
-            {
-                MessageBox.Show("Please fill all required fields.");
-                return;
-            }
+            addressValidator.Validate(Country.Text, City.Text, StreetName.Text, HouseNumber.Text, PostCode.Text);
 
             var address = new AddressEntity.Address
             {
@@ -54,36 +54,22 @@ namespace SwiftMart
                 PostCode = PostCode.Text,
                 StreetName = StreetName.Text,
                 HouseNumber = HouseNumber.Text,
-                CustomrtId = CustomerSession.Instance.Id
+                CustomertId = CustomerSession.Instance.Id
             };
 
-            try
-            {
-                context.Addresses.Add(address);
-                context.SaveChanges();
-                MessageBox.Show("Address added successfully!");
+            addressService.SaveAddress(address);
 
-                AddAddressDialog.Visibility = Visibility.Collapsed;
-                DisplayUserAddresses(); // Обновить список адресов.
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed to save address: " + ex.Message);
-            }
+            AddAddressDialog.Visibility = Visibility.Collapsed;
+            DisplayUserAddresses();
         }
 
         private void DisplayUserAddresses()
         {
-            int userId = CustomerSession.Instance.Id;
+            var userAddresses = addressService.GetAddressesByCustomerId(CustomerSession.Instance.Id);
 
-            // Получаем список адресов пользователя.
-            var userAddresses = context.Addresses.Where(a => a.CustomrtId == userId).ToList();
-
-            // Очистка текущего списка.
             WrapPanel addressesPanel = (WrapPanel)FindName("AddressesPanel");
             addressesPanel.Children.Clear();
 
-            // Отображение адресов.
             foreach (var address in userAddresses)
             {
                 var addressBorder = new Border
@@ -142,7 +128,6 @@ namespace SwiftMart
                 addressesPanel.Children.Add(addressBorder);
             }
 
-            // Добавление кнопки для нового адреса.
             var addAddressBorder = new Border
             {
                 Width = 300,
@@ -167,8 +152,6 @@ namespace SwiftMart
             addAddressBorder.Child = addAddressButton;
             addressesPanel.Children.Add(addAddressBorder);
         }
-
-
         private void EditAddress(AddressEntity.Address address)
         {
             Country.Text = address.Country;
@@ -180,15 +163,11 @@ namespace SwiftMart
 
             AddAddressDialog.Visibility = Visibility.Visible;
         }
-
-
         private void DeleteAddress(AddressEntity.Address address)
         {
             if (MessageBox.Show("Are you sure you want to delete this address?", "Confirm Delete", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                context.Addresses.Remove(address);
-                context.SaveChanges();
-                MessageBox.Show("Address deleted successfully!");
+                addressService.DeleteAddress(address);
                 DisplayUserAddresses();
             }
         }

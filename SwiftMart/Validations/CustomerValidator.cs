@@ -1,5 +1,6 @@
 ﻿using SwiftMart.DataBase;
 using SwiftMart.Hash;
+using SwiftMart.Sessions;
 
 namespace SwiftMart.Validations
 {
@@ -33,6 +34,8 @@ namespace SwiftMart.Validations
                 return false;
             }
 
+
+
             errorMessage = null;
             return true;
         }
@@ -51,6 +54,10 @@ namespace SwiftMart.Validations
                 errorMessage = "Incorrect password.";
                 return false;
             }
+
+            CustomerSession.Instance.Id = customer.Id;
+            CustomerSession.Instance.Name = customer.Name;
+            CustomerSession.Instance.Lastname = customer.Lastname;
 
             errorMessage = null;
             return true;

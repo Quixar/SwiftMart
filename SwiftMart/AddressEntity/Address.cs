@@ -6,7 +6,7 @@ namespace SwiftMart.AddressEntity
     {
         [Key]
         public int Id {  get; set; }
-        public int CustomrtId { get; set; }
+        public int CustomertId { get; set; }
         public string? Country { get; set; }
         public string? City { get; set; }
         public string? StreetName { get; set; }

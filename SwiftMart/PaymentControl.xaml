@@ -7,24 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <!-- Верхняя панель -->
-        
-
-        <!-- Левая панель -->
-       
-
-        <!-- Основной контент -->
         <StackPanel Margin="150,50,0,50">
-            <!-- Заголовок -->
             <TextBlock Text="Cards" FontSize="20" FontWeight="Bold" Margin="10" />
 
-            
-            
-            
-            <!-- Список карт -->
             <WrapPanel Margin="10" HorizontalAlignment="Left" Name="CardsPanel">
-                <!-- Карта -->
-                
+
             </WrapPanel>
 
             <Border Visibility="Collapsed" Name="AddCardDialog" Background="#FFFFFF" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="5" Padding="20" Margin="10" HorizontalAlignment="Center">
@@ -64,8 +51,6 @@
                 </StackPanel>
             </Border>
         </StackPanel>
-
-        <!-- Нижняя панель -->
         <TextBlock Text="Contact information" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" />
     </Grid>
 </UserControl>

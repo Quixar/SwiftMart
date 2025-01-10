@@ -17,6 +17,7 @@ namespace SwiftMart
         {
             InitializeComponent();
             UserSessionName.Text = CustomerSession.Instance.Name + " " + CustomerSession.Instance.Lastname;
+
         }
     }
 }

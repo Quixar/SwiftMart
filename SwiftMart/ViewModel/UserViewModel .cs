@@ -1,10 +1,13 @@
-﻿using SwiftMart.Commands;
+﻿using SwiftMart.Accounts;
+using SwiftMart.Commands;
 using SwiftMart.DataBase;
 using SwiftMart.EmailTools;
 using SwiftMart.Hash;
+using SwiftMart.Services;
 using SwiftMart.Sessions;
 using SwiftMart.UserEntities;
 using SwiftMart.Validations;
+using SwiftMart.WishlistEntity;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -15,15 +18,17 @@ namespace SwiftMart.ViewModel
     public class UserViewModel : INotifyPropertyChanged
     {
         private int id;
-        private string name;
-        private string lastName;
-        private string email;
-        private string password;
-        private string role;
+        private string? name;
+        private string? lastName;
+        private string? email;
+        private string? password;
+        private string? role;
         private readonly Context context;
         private readonly CustomerValidator userValidator;
         public ICommand RegisterCommand { get; }
         public ICommand LoginCommand { get; }
+        private readonly WishlistService wishlistService;
+        private readonly CustomerAccountService customerAccountService;
 
         public UserViewModel()
         {
@@ -32,6 +37,8 @@ namespace SwiftMart.ViewModel
 
             RegisterCommand = new AsyncRelayCommand(Register);
             LoginCommand = new RelayCommand(Login);
+            wishlistService = new WishlistService();
+            customerAccountService = new CustomerAccountService();
         }
 
         public int Id
@@ -117,7 +124,6 @@ namespace SwiftMart.ViewModel
                 context.Customers.Add(newCustomer);
                 context.SaveChanges();
 
-
                 try
                 {
                     var emailService = new EmailService();
@@ -127,6 +133,9 @@ namespace SwiftMart.ViewModel
                     CustomerSession.Instance.Id = newCustomer.Id;
                     CustomerSession.Instance.Name = newCustomer.Name;
                     CustomerSession.Instance.Lastname = newCustomer.Lastname;
+
+                    wishlistService.CreateWishlist();
+                    customerAccountService.CreateCustomerAccount();
 
                     OpenHomeShop();
                 }

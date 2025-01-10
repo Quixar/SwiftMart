@@ -69,5 +69,12 @@ namespace SwiftMart
             shoppingCart.Show();
             this.Close();
         }
+
+        private void Image_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var homeShop = new HomeShop();
+            homeShop.Show();
+            this.Close();
+        }
     }
 }
