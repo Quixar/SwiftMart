@@ -21,7 +21,7 @@
 
             <!-- Логотип -->
             <!-- Логотип -->
-            <Image Grid.Column="0" Margin="61,13,61,22" Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill"/>
+            <Image Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown" Margin="61,13,61,22"  Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill"/>
 
             <!-- Поиск -->
             <Border CornerRadius="10" BorderBrush="Black" BorderThickness="2" Background="LightGray" Padding="2" Grid.Column="1" Margin="303,35,77,35">
@@ -33,7 +33,7 @@
                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\round-account-button-with-user-inside_icon-icons.com_72596.png" Stretch="Fill" RenderTransformOrigin="-1.878,0.467" Height="55"/>
             </Button>
 
-            <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="84,0,186,0">
+            <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="84,0,186,0" Click="Button_Click_1">
                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\1490129319-rounded09_82169.png" Stretch="Fill"  RenderTransformOrigin="2.732,0.513"/>
             </Button>
         </Grid>
@@ -81,90 +81,7 @@
 
             <ContentControl Name="MainContent" DockPanel.Dock="Right" Margin="10"/>
 
-
         </DockPanel>
-
-
-            <!-- Основной блок --><!--
-            <Grid Margin="340,40,240,40" Background="White" Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="200" />
-                    <RowDefinition Height="260" />
-                </Grid.RowDefinitions>
-                --><!-- User Section --><!--
-                <Border Grid.Row="0" CornerRadius="32" BorderBrush="Gray" BorderThickness="1" Margin="10" Padding="10">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            --><!-- User Icon and Name --><!--
-                            <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\round-account-button-with-user-inside_icon-icons.com_72596.png" Width="55" Height="55" Margin="0,0,10,0" />
-                            <StackPanel>
-                                <TextBlock Text="Name User" FontWeight="Bold" FontSize="20" Margin="0,0,0,5"/>
-                                --><!-- User Info (Favorites, Subscriptions, etc.) --><!--
-                                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                                    <TextBlock Text="Favorites" />
-                                    --><!--<TextBlock Text=" | " Margin="5,0" />
-                                    <TextBlock Text="Subscriptions" />--><!--
-                                    <TextBlock Text=" | " Margin="5,0" />
-                                    <TextBlock Text="Viewed" />
-                                </StackPanel>
-                            </StackPanel>
-                        </StackPanel>
-                    </Grid>
-                </Border>
-
-                --><!-- Orders Section --><!--
-                <Border Grid.Row="1" CornerRadius="32" BorderBrush="Gray" BorderThickness="1" Margin="10" Padding="10">
-                    <StackPanel>
-                        <TextBlock Text="My Orders" FontWeight="Bold" FontSize="18" Margin="0,0,0,10" />
-                        <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Orientation="Horizontal">
-                            --><!-- Need to Pay --><!--
-                            <Button Width="100" Height="100" Margin="5">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Image Source="D:\Ресурсы для Swift Mart\Ресурсы для Swift Mart\icons8-бумажник-64.png" Width="40" Height="40" />
-                                    <TextBlock Text="Need to Pay" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
-                                </StackPanel>
-                            </Button>
-
-                            --><!-- Ready for Shipment --><!--
-                            <Button Width="100" Height="100" Margin="5">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Image Source="D:\Ресурсы для Swift Mart\Ресурсы для Swift Mart\icons8-тележка-50.png" Width="40" Height="40" />
-                                    <TextBlock Text="Ready for Shipment" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
-                                </StackPanel>
-                            </Button>
-
-                            --><!-- En Route --><!--
-                            <Button Width="100" Height="100" Margin="5">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Image Source="D:\Ресурсы для Swift Mart\Ресурсы для Swift Mart\icons8-заказ-в-пути-50.png" Width="40" Height="40" />
-                                    <TextBlock Text="En Route" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
-                                </StackPanel>
-                            </Button>
-
-                            --><!-- Arrived --><!--
-                            <Button Width="100" Height="100" Margin="5">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Image Source="D:\Ресурсы для Swift Mart\Ресурсы для Swift Mart\icons8-данные-доставлены-50 (1).png" Width="40" Height="40" />
-                                    <TextBlock Text="Arrived" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
-                                </StackPanel>
-                            </Button>
-
-                            --><!-- View All --><!--
-                            <Button Width="100" Height="100" Margin="5">
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Image Source="D:\Ресурсы для Swift Mart\Ресурсы для Swift Mart\icons8-логистика-64.png" Width="40" Height="40" />
-                                    <TextBlock Text="View All" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12" />
-                                </StackPanel>
-                            </Button>
-                        </WrapPanel>
-                    </StackPanel>
-                </Border>
-
-            </Grid>-->
-        </Grid>
+    </Grid>
 
 </Window>

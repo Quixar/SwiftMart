@@ -23,5 +23,12 @@ namespace SwiftMart
         {
             InitializeComponent();
         }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var homeShop = new HomeShop();
+            homeShop.Show();
+            this.Close();
+        }
     }
 }

@@ -7,8 +7,6 @@
         mc:Ignorable="d"
         Title="AboutUsWindow" Height="1080" Width="1920">
     <Grid>
-
-        <!-- Верхний красный бар -->
         <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="320" />
@@ -18,26 +16,8 @@
             </Grid.ColumnDefinitions>
 
             <!-- Логотип -->
-            <Image Grid.Column="0" Margin="94,20,20,20" 
-                   Source="/Resources/logo.png" Stretch="Fill" />
-
-            <!-- Поиск -->
-            <Border CornerRadius="10" BorderBrush="Black" BorderThickness="2" 
-                    Background="LightGray" Padding="2" Grid.Column="1" Margin="20,35">
-                <TextBox Background="Transparent" BorderThickness="0" 
-                         VerticalAlignment="Center" Text="Search" 
-                         FontFamily="Arial" Margin="6" />
-            </Border>
-
-            <!-- Иконка пользователя -->
-            <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="220,0,50,0">
-                <Image Source="/Resources/user_icon.png" Stretch="Fill" />
-            </Button>
-
-            <!-- Иконка корзины -->
-            <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="85,0,185,0">
-                <Image Source="/Resources/cart_icon.png" Stretch="Fill" />
-            </Button>
+            <Image Grid.Column="0" Margin="94,20,20,20"  MouseLeftButtonDown="Image_MouseLeftButtonDown"
+                   Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill" />
         </Grid>
 
         <!-- Категории и основное содержимое -->

@@ -97,33 +97,14 @@ namespace SwiftMart
             }
         }
 
-        private void RegistrationAddressTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (RegistrationAddressTextBox.Text == "Address *")
-            {
-                RegistrationAddressTextBox.Text = string.Empty;
-                AuthorizationEmailTextBox.Foreground = new SolidColorBrush(Color.FromArgb(128, 0, 0, 0));
-            }
-        }
-
-        private void RegistrationAddressTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(RegistrationAddressTextBox.Text))
-            {
-                RegistrationAddressTextBox.Text = "Address *";
-            }
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             VM.Password = MyPasswordBox.Password;
-            MessageBox.Show(VM.Password);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             VM.Password = Autorization.Password;
-            MessageBox.Show(VM.Password);
         }
     }
 }

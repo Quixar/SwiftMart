@@ -47,5 +47,19 @@ namespace SwiftMart
                 }
             }
         }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var homeShop = new HomeShop();
+            homeShop.Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var shoppingCart = new ShoppingCart();
+            shoppingCart.Show();
+            this.Close();
+        }
     }
 }

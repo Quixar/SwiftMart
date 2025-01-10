@@ -1,10 +1,13 @@
-﻿using SwiftMart.Commands;
+﻿using SwiftMart.Accounts;
+using SwiftMart.Commands;
 using SwiftMart.DataBase;
 using SwiftMart.EmailTools;
 using SwiftMart.Hash;
+using SwiftMart.Services;
 using SwiftMart.Sessions;
 using SwiftMart.UserEntities;
 using SwiftMart.Validations;
+using SwiftMart.WishlistEntity;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -15,16 +18,17 @@ namespace SwiftMart.ViewModel
     public class UserViewModel : INotifyPropertyChanged
     {
         private int id;
-        private string name;
-        private string lastName;
-        private string email;
-        private string password;
-        private string address;
-        private string role;
+        private string? name;
+        private string? lastName;
+        private string? email;
+        private string? password;
+        private string? role;
         private readonly Context context;
         private readonly CustomerValidator userValidator;
         public ICommand RegisterCommand { get; }
         public ICommand LoginCommand { get; }
+        private readonly WishlistService wishlistService;
+        private readonly CustomerAccountService customerAccountService;
 
         public UserViewModel()
         {
@@ -33,6 +37,8 @@ namespace SwiftMart.ViewModel
 
             RegisterCommand = new AsyncRelayCommand(Register);
             LoginCommand = new RelayCommand(Login);
+            wishlistService = new WishlistService();
+            customerAccountService = new CustomerAccountService();
         }
 
         public int Id
@@ -46,13 +52,6 @@ namespace SwiftMart.ViewModel
             get => lastName;
             set => SetProperty(ref lastName, value);
         }
-
-        public string Address
-        {
-            get => address;
-            set => SetProperty(ref address, value);
-        }
-
         public string Name
         {
             get => name;
@@ -109,7 +108,7 @@ namespace SwiftMart.ViewModel
 
         private async Task Register()
         {
-            if (userValidator.ValidateRegistration(Name, Lastname, Email, Password, Address, out string errorMessage))
+            if (userValidator.ValidateRegistration(Name, Lastname, Email, Password, out string errorMessage))
             {
                 string hashedPassword = PasswordHasher.HashPassword(Password);
 
@@ -119,7 +118,6 @@ namespace SwiftMart.ViewModel
                     Lastname = Lastname,
                     Email = Email,
                     Password = hashedPassword,
-                    Address = Address,
                     Role = "User"
                 };
 
@@ -133,8 +131,11 @@ namespace SwiftMart.ViewModel
                     MessageBox.Show("Registration successful!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                     
                     CustomerSession.Instance.Id = newCustomer.Id;
-                    CustomerSession.Instance.Address = newCustomer.Address;
                     CustomerSession.Instance.Name = newCustomer.Name;
+                    CustomerSession.Instance.Lastname = newCustomer.Lastname;
+
+                    wishlistService.CreateWishlist();
+                    customerAccountService.CreateCustomerAccount();
 
                     OpenHomeShop();
                 }

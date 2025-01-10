@@ -1,11 +1,4 @@
-﻿using SwiftMart.Products;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SwiftMart.ProductEntity
+﻿namespace SwiftMart.ProductEntity
 {
     public class Store
     {

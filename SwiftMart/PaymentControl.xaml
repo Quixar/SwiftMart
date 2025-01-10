@@ -7,57 +7,48 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <!-- Верхняя панель -->
-        
-
-        <!-- Левая панель -->
-       
-
-        <!-- Основной контент -->
         <StackPanel Margin="150,50,0,50">
-            <!-- Заголовок -->
             <TextBlock Text="Cards" FontSize="20" FontWeight="Bold" Margin="10" />
 
-            <!-- Список карт -->
-            <WrapPanel Margin="10" HorizontalAlignment="Left">
-                <!-- Карта -->
-                <Border Width="200" Height="100" Background="#F5F5F5" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="5" Margin="10">
-                    <StackPanel>
-                        <TextBlock Text="**** 1234" FontWeight="Bold" FontSize="14" Margin="10" />
-                        <TextBlock Text="VISA" FontSize="12" Foreground="Gray" Margin="10,0,0,0" />
-                    </StackPanel>
-                </Border>
+            <WrapPanel Margin="10" HorizontalAlignment="Left" Name="CardsPanel">
 
-                <!-- Кнопка добавления новой карты -->
-                <Border Width="200" Height="100" Background="#F5F5F5" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="5" Margin="10">
-                    <Button Content="+ Add new Card" Background="Transparent" BorderThickness="0" FontSize="16" Foreground="Black" Click="Button_Click" />
-                </Border>
             </WrapPanel>
 
-            <!-- Диалог добавления новой карты -->
             <Border Visibility="Collapsed" Name="AddCardDialog" Background="#FFFFFF" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="5" Padding="20" Margin="10" HorizontalAlignment="Center">
                 <StackPanel>
                     <TextBlock Text="Add new card" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" />
                     <Button Content="X" Background="Transparent" Foreground="Black" HorizontalAlignment="Right" Click="Button_Click_2" />
-                    <TextBox Text="Card number" Margin="0,5,0,5" />
-                    <TextBox Text="Name on card" Margin="0,5,0,5" />
+                    <TextBox Text="Card number" Name="CardNumber"  Margin="0,5,0,5" />
+                    <TextBox Text="Name on card" Name="NameOnCard" Margin="0,5,0,5" />
 
                     <WrapPanel Margin="0,5,0,5">
-                        <ComboBox Width="60" Margin="0,0,10,0">
-                            <ComboBoxItem Content="MM" />
+                        <ComboBox Width="60" Margin="0,0,10,0" Name="MM">
+                            <ComboBoxItem Content="01" />
+                            <ComboBoxItem Content="02" />
+                            <ComboBoxItem Content="03" />
+                            <ComboBoxItem Content="04" />
+                            <ComboBoxItem Content="05" />
+                            <ComboBoxItem Content="06" />
+                            <ComboBoxItem Content="07" />
+                            <ComboBoxItem Content="08" />
+                            <ComboBoxItem Content="09" />
+                            <ComboBoxItem Content="10" />
+                            <ComboBoxItem Content="11" />
+                            <ComboBoxItem Content="12" />
                         </ComboBox>
-                        <ComboBox Width="60" Margin="0,0,10,0">
-                            <ComboBoxItem Content="YY" />
+                        <ComboBox Width="60" Margin="0,0,10,0" Name="YY">
+                            <ComboBoxItem Content="2025" />
+                            <ComboBoxItem Content="2026" />
+                            <ComboBoxItem Content="2027" />
+                            <ComboBoxItem Content="2028" />
+                            <ComboBoxItem Content="2029" />
+                            <ComboBoxItem Content="2030" />
                         </ComboBox>
-                        <TextBox Text="CVV" Width="60" />
+                        <TextBox Text="CVV" Name="CVV" Width="60" />
                     </WrapPanel>
-
                     <Button Content="Save" Background="Black" Foreground="White" HorizontalAlignment="Center" Width="80" Margin="10,20,10,0" Click="Button_Click_1" />
                 </StackPanel>
             </Border>
         </StackPanel>
-
-        <!-- Нижняя панель -->
-        <TextBlock Text="Contact information" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" />
     </Grid>
 </UserControl>

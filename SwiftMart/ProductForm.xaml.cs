@@ -12,11 +12,6 @@ namespace SwiftMart
             InitializeComponent();
         }
 
-        public Product(int id)
-        {
-
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ShoppingCart cart = new ShoppingCart();
@@ -53,6 +48,48 @@ namespace SwiftMart
         {
             var returnProduct = new ReturnOfProductWindow();
             returnProduct.Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var userPage = new UserPage();
+            userPage.Show();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var shoppingCart = new ShoppingCart();
+            shoppingCart.Show();
+            this.Close();
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var homeShop = new HomeShop();
+            homeShop.Show();
+            this.Close();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var shoppingCart = new ShoppingCart();
+            shoppingCart.Show();
+            this.Close();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            var userPage = new UserPage();
+            userPage.Show();
+            this.Close();
+        }
+
+        private void Image_MouseLeftButtonDown_1(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var homeShop = new HomeShop();
+            homeShop.Show();
             this.Close();
         }
     }

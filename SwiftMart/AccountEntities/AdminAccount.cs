@@ -1,14 +1,15 @@
 ﻿using SwiftMart.Accounts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
+/// <summary>
+/// Represents an administrative account within the SwiftMart system.
+/// Inherits from the <see cref="Account"/> class and is used for accounts 
+/// with administrative privileges.
+/// </summary>
 namespace SwiftMart.AccountEntities
 {
     public class AdminAccount : Account
     {
-
+        // Additional properties or methods specific to admin functionality
+        // can be added here in the future.
     }
 }
