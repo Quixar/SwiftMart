@@ -29,7 +29,7 @@
                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\round-account-button-with-user-inside_icon-icons.com_72596.png" Stretch="Fill" RenderTransformOrigin="-1.878,0.467" Height="55"/>
             </Button>
 
-            <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="84,0,186,0">
+            <Button BorderThickness="0" Grid.Column="3" Height="56" Click="Button_Click_2" Background="#EA6767" VerticalAlignment="Center" Margin="84,0,186,0">
                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\1490129319-rounded09_82169.png" Stretch="Fill"  RenderTransformOrigin="2.732,0.513"/>
             </Button>
         </Grid>
@@ -619,11 +619,9 @@
                             Padding="5,2" 
                             HorizontalAlignment="Center" />
                             </Border>
-
                             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
                             </Border>
-
                         </StackPanel>
                     </Border>
 
@@ -644,11 +642,9 @@
                             Padding="5,2" 
                             HorizontalAlignment="Center" />
                             </Border>
-
                             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
                             </Border>
-
                         </StackPanel>
                     </Border>
 
@@ -673,7 +669,6 @@
                             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
                             </Border>
-
                         </StackPanel>
                     </Border>
 
@@ -694,11 +689,9 @@
                             Padding="5,2" 
                             HorizontalAlignment="Center" />
                             </Border>
-
                             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
                             </Border>
-
                         </StackPanel>
                     </Border>
 
@@ -723,7 +716,6 @@
                             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
                             </Border>
-
                         </StackPanel>
                     </Border>
 
@@ -748,10 +740,8 @@
                             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
                             </Border>
-
                         </StackPanel>
                     </Border>
-
                     <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
                         <StackPanel>
                             <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_141737328-removebg-preview.png" Height="150" Margin="0,10" MouseLeftButtonDown="Border_MouseEnter"/>
@@ -769,11 +759,9 @@
                             Padding="5,2" 
                             HorizontalAlignment="Center" />
                             </Border>
-
                             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
                             </Border>
-
                         </StackPanel>
                     </Border>
 
@@ -794,21 +782,13 @@
                             Padding="5,2" 
                             HorizontalAlignment="Center" />
                             </Border>
-
                             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
                             </Border>
-                            
                         </StackPanel>
-                    
-                    
                     </Border>
-                
-                
                 </UniformGrid>
-            
             </ScrollViewer>
-           
         </Grid>
     </Grid>
 </Window>

@@ -30,8 +30,6 @@ namespace SwiftMart.DataBase
         public DbSet<Subcategory> Subcategories { get; set; }
         public DbSet<TV> TVs { get; set; }
         public DbSet<Admin> Admins { get; set; }
-
-
         public DbSet<CustomerAccount> CustomerAccounts { get; set; }
         public DbSet<Card> Cards { get; set; }
         public DbSet<Review> Reviews { get; set; }

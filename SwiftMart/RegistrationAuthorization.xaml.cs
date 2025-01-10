@@ -100,13 +100,11 @@ namespace SwiftMart
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             VM.Password = MyPasswordBox.Password;
-            MessageBox.Show(VM.Password);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             VM.Password = Autorization.Password;
-            MessageBox.Show(VM.Password);
         }
     }
 }

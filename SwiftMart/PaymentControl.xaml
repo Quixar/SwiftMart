@@ -46,11 +46,9 @@
                         </ComboBox>
                         <TextBox Text="CVV" Name="CVV" Width="60" />
                     </WrapPanel>
-
                     <Button Content="Save" Background="Black" Foreground="White" HorizontalAlignment="Center" Width="80" Margin="10,20,10,0" Click="Button_Click_1" />
                 </StackPanel>
             </Border>
         </StackPanel>
-        <TextBlock Text="Contact information" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" />
     </Grid>
 </UserControl>
