@@ -7,8 +7,6 @@
         mc:Ignorable="d"
         Title="ContactWindow" Height="1080" Width="1920">
     <Grid>
-
-        <!-- Верхний красный бар -->
         <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="320" />
@@ -20,15 +18,11 @@
             <Image Grid.Column="0" Margin="94,20,20,20" MouseLeftButtonDown="Image_MouseLeftButtonDown"
                 Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill" />
         </Grid>
-
-        <!-- Категории и основное содержимое -->
         <Grid Margin="0,100,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-
-            <!-- Верхняя панель -->
             <Grid Background="#D40000">
                 <Menu HorizontalAlignment="Left" VerticalAlignment="Center" 
                    Margin="20,0,0,0" FontSize="16" Background="#D40000">
@@ -56,23 +50,16 @@
                     </Menu.Resources>
                 </Menu>
             </Grid>
-
-            <!-- Основное содержимое страницы -->
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="616,20,616,20">
                 <StackPanel>
-                    <!-- Заголовок -->
                     <TextBlock Text="Contact Us"
                             FontSize="32"
                             FontWeight="Bold"
                             Foreground="Black"
                             Margin="0,0,0,20" />
-
-                    <!-- Основной текст -->
                     <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
                         Have questions or need assistance? Our team is here to help you. Feel free to reach out using the information below or visit one of our stores.
                     </TextBlock>
-
-                    <!-- Контактная информация -->
                     <TextBlock Text="Contact Information"
                             FontSize="24"
                             FontWeight="Bold"
@@ -83,8 +70,6 @@
                         Email: support@swiftmart.com
                         Address: 123 SwiftMart Lane, Tech City, 56789
                     </TextBlock>
-
-                    <!-- Часы работы -->
                     <TextBlock Text="Working Hours"
                             FontSize="24"
                             FontWeight="Bold"
@@ -95,8 +80,6 @@
                         Saturday: 10:00 AM - 8:00 PM
                         Sunday: 10:00 AM - 6:00 PM
                     </TextBlock>
-
-                    <!-- Социальные сети -->
                     <TextBlock Text="Follow Us"
                             FontSize="24"
                             FontWeight="Bold"
@@ -107,8 +90,6 @@
                         Twitter: @SwiftMart
                         Instagram: @SwiftMartOfficial
                     </TextBlock>
-
-                    <!-- Форма обратной связи -->
                     <TextBlock Text="Send Us a Message"
                             FontSize="24"
                             FontWeight="Bold"

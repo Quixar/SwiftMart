@@ -12,18 +12,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+/// <summary>
+/// Represents the user page where the user can navigate through various sections such as overview, orders, payment, and shipping address.
+/// </summary>
 namespace SwiftMart
 {
     /// <summary>
-    /// Логика взаимодействия для UserPage.xaml
+    /// Initializes a new instance of the <see cref="UserPage"/> class.
     /// </summary>
     public partial class UserPage : Window
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserPage"/> class.
+        /// </summary>
         public UserPage()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Handles the click event for the navigation buttons to switch between different sections on the page.
+        /// </summary>
+        /// <param name="sender">The object that triggered the event.</param>
+        /// <param name="e">The event data.</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button button)
@@ -48,6 +59,11 @@ namespace SwiftMart
             }
         }
 
+        /// <summary>
+        /// Handles the mouse left button down event on the image to navigate back to the home shop page.
+        /// </summary>
+        /// <param name="sender">The object that triggered the event.</param>
+        /// <param name="e">The event data.</param>
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             var homeShop = new HomeShop();
@@ -55,6 +71,11 @@ namespace SwiftMart
             this.Close();
         }
 
+        /// <summary>
+        /// Handles the button click event to navigate to the shopping cart page.
+        /// </summary>
+        /// <param name="sender">The object that triggered the event.</param>
+        /// <param name="e">The event data.</param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var shoppingCart = new ShoppingCart();

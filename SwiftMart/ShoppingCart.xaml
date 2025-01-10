@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="ShoppingCart" Height="1080" Width="1920">
     <Grid Background="White">
-        <!-- Верхний красный бар -->
         <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="320" />
@@ -15,11 +14,7 @@
                 <ColumnDefinition Width="225" />
                 <ColumnDefinition Width="321" />
             </Grid.ColumnDefinitions>
-
-            <!-- Логотип -->
             <Image Grid.Column="0" Margin="61,13,61,22" MouseLeftButtonDown="Image_MouseLeftButtonDown" Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill"/>
-
-            <!-- Поиск -->
             <Border CornerRadius="10" BorderBrush="Black" BorderThickness="2" Background="LightGray" Padding="2" Grid.Column="1" Margin="303,35,77,35">
 
                 <TextBox Background="Transparent" BorderThickness="0" VerticalAlignment="Top" Text="Search" Margin="6,4,14,0" FontFamily="Arial" />
@@ -33,15 +28,11 @@
                 <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\1490129319-rounded09_82169.png" Stretch="Fill"  RenderTransformOrigin="2.732,0.513"/>
             </Button>
         </Grid>
-
-        <!-- Основной контент -->
         <Grid Margin="10,200,10,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-
-            <!-- Список товаров -->
             <StackPanel Grid.Column="0" Margin="10">
                 <TextBlock Text="Cart (1)" FontSize="20" FontWeight="Bold" Margin="0,0,0,10" />
                 <Border Background="#F0F0F0" CornerRadius="5" Padding="10">
@@ -51,14 +42,11 @@
                             <ColumnDefinition Width="3*" />
                             <ColumnDefinition Width="1*" />
                         </Grid.ColumnDefinitions>
-                        <!-- Изображение товара -->
                         <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_144667576__1_-removebg-preview.png" Width="100" Height="100" Grid.Column="0" />
-                        <!-- Информация о товаре -->
                         <StackPanel Grid.Column="1" Margin="10,0">
                             <TextBlock Text="APPLE iPhone 13 128 GB Midnight Dual SIM" FontSize="14" FontWeight="Bold" />
                             <TextBlock Text="$539.00" FontSize="16" Foreground="Black" Margin="0,10,0,0" />
                         </StackPanel>
-                        <!-- Количество -->
                         <StackPanel Grid.Column="2" HorizontalAlignment="Right">
                             <Button Content="♥" Background="White" />
                             <ComboBox Width="50" SelectedIndex="0">
@@ -70,8 +58,6 @@
                     </Grid>
                 </Border>
             </StackPanel>
-
-            <!-- Резюме -->
             <StackPanel Grid.Column="1" Margin="10">
                 <Border Background="#F0F0F0" CornerRadius="5" Padding="10">
                     <StackPanel>
@@ -81,8 +67,6 @@
                         <Button Content="Checkout (1)" Background="#F05C5C" Foreground="White" Height="40" Margin="0,10,0,0" />
                     </StackPanel>
                 </Border>
-
-                <!-- Дополнительная информация -->
                 <Border Background="#F0F0F0" CornerRadius="5" Padding="10" Margin="0,10,0,0">
                     <StackPanel>
                         <TextBlock Text="✔ Fast delivery" FontSize="12" Margin="0,5,0,0" />

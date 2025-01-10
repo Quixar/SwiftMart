@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+/// <summary>
+/// Represents the contact window in the SwiftMart application.
+/// Provides functionality for the user to navigate back to the home shop page.
+/// </summary>
 namespace SwiftMart
 {
     /// <summary>
@@ -19,11 +23,22 @@ namespace SwiftMart
     /// </summary>
     public partial class ContactWindow : Window
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContactWindow"/> class.
+        /// This method sets up the window where the user can view contact information.
+        /// </summary>
         public ContactWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event handler for mouse left button down event on an image.
+        /// Navigates the user back to the home shop window.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data.</param>
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             var homeShop = new HomeShop();

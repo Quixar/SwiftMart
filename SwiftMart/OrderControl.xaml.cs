@@ -13,6 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+/// <summary>
+/// User control for managing and displaying orders.
+/// </summary>
 namespace SwiftMart
 {
     /// <summary>
@@ -20,6 +23,10 @@ namespace SwiftMart
     /// </summary>
     public partial class OrderControl : UserControl
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrderControl"/> class.
+        /// </summary>
         public OrderControl()
         {
             InitializeComponent();

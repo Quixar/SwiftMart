@@ -6,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+
+/// <summary>
+/// User control for displaying an overview of the user's session, including their full name.
+/// </summary>
 namespace SwiftMart
 {
     /// <summary>
@@ -13,6 +17,11 @@ namespace SwiftMart
     /// </summary>
     public partial class OverviewControl : UserControl
     {
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OverviewControl"/> class.
+        /// Displays the user's full name from the session in the corresponding text element.
+        /// </summary>
         public OverviewControl()
         {
             InitializeComponent();

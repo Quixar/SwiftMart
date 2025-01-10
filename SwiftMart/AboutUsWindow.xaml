@@ -15,19 +15,16 @@
                 <ColumnDefinition Width="321" />
             </Grid.ColumnDefinitions>
 
-            <!-- Логотип -->
             <Image Grid.Column="0" Margin="94,20,20,20"  MouseLeftButtonDown="Image_MouseLeftButtonDown"
                    Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill" />
         </Grid>
 
-        <!-- Категории и основное содержимое -->
         <Grid Margin="0,100,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <!-- Верхняя панель -->
             <Grid Background="#D40000">
                 <Menu HorizontalAlignment="Left" VerticalAlignment="Center" 
                       Margin="20,0,0,0" FontSize="16" Background="#D40000">
@@ -56,17 +53,14 @@
                 </Menu>
             </Grid>
 
-            <!-- Основное содержимое страницы -->
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="616,20,616,20">
                 <StackPanel>
-                    <!-- Заголовок -->
                     <TextBlock Text="About Us"
                                FontSize="32"
                                FontWeight="Bold"
                                Foreground="Black"
                                Margin="0,0,0,20" />
 
-                    <!-- Описание компании -->
                     <TextBlock Text="Small Dreams and Big Goals"
                                FontSize="24"
                                FontWeight="Bold"
@@ -75,8 +69,6 @@
                     <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
                         Swift Mart is a modern hypermarket for electronics and home appliances, created to fulfill the desires of our customers since 2025. We provide access to the most advanced and high-quality products, making your shopping experience not only convenient but also highly beneficial. Our customers know they can find everything here — from the most popular gadgets to rare technical solutions.
                     </TextBlock>
-
-                    <!-- Миссия -->
                     <TextBlock Text="Our Mission — To Be Helpful"
                                FontSize="24"
                                FontWeight="Bold"
@@ -85,8 +77,6 @@
                     <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
                         We believe that electronics and appliances should simplify life, inspire new achievements, and bring joy. That’s why we’ve made the process of choosing and purchasing simple and enjoyable. Swift Mart is the place where you can find the perfect product effortlessly, enjoying every step of the shopping journey.
                     </TextBlock>
-
-                    <!-- Комфорт клиентов -->
                     <TextBlock Text="Your Comfort Is Our Priority"
                                FontSize="24"
                                FontWeight="Bold"
@@ -95,8 +85,6 @@
                     <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
                         We provide a convenient and intuitive service, offering honest reviews, detailed specifications, and practical advice. You can also test products in our physical stores to ensure confidence in your selection.
                     </TextBlock>
-
-                    <!-- Гордость -->
                     <TextBlock Text="What We’re Proud Of"
                                FontSize="24"
                                FontWeight="Bold"
@@ -107,8 +95,6 @@
                         2 million daily visitors
                         90% of customers return for new purchases
                     </TextBlock>
-
-                    <!-- Удобная доставка -->
                     <TextBlock Text="Convenient Delivery"
                                FontSize="24"
                                FontWeight="Bold"
@@ -117,8 +103,6 @@
                     <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
                         We understand how important it is to receive your order on time. That’s why Swift Mart ensures fast delivery: within one day in the city and by the next day in the region. You can pay for your purchase however you prefer — in cash, by card, or even in installments.
                     </TextBlock>
-
-                    <!-- Совместное движение -->
                     <TextBlock Text="Moving Forward Together"
                                FontSize="24"
                                FontWeight="Bold"

@@ -7,10 +7,7 @@
         mc:Ignorable="d"
         Title="SwiftMart" Height="1080" Width="1920"
         WindowState="Maximized">
-
-    <!-- Основной Grid -->
     <Grid>
-        <!-- Верхний красный бар -->
         <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="320" />
@@ -18,12 +15,8 @@
                 <ColumnDefinition Width="225" />
                 <ColumnDefinition Width="321" />
             </Grid.ColumnDefinitions>
-
-            <!-- Логотип -->
-            <!-- Логотип -->
             <Image Grid.Column="0" MouseLeftButtonDown="Image_MouseLeftButtonDown" Margin="61,13,61,22"  Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill"/>
 
-            <!-- Поиск -->
             <Border CornerRadius="10" BorderBrush="Black" BorderThickness="2" Background="LightGray" Padding="2" Grid.Column="1" Margin="303,35,77,35">
 
                 <TextBox Background="Transparent" BorderThickness="0" VerticalAlignment="Top" Text="Search" Margin="6,4,14,0" FontFamily="Arial" />
@@ -39,7 +32,6 @@
         </Grid>
 
         <DockPanel Margin="0,200,0,0">
-            <!-- Левое меню -->
             <StackPanel DockPanel.Dock="Left" Background="#F4F4F4" Width="250">
                 <Button Content="Overview" Margin="10,5" Height="40" Click="Button_Click" Tag="Overview">
                     <Button.Template>

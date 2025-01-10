@@ -7,8 +7,6 @@
         mc:Ignorable="d"
         Title="DeliveryAndPaymentWindow" Height="1080" Width="1920">
     <Grid>
-
-        <!-- Верхний красный бар -->
         <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="320" />
@@ -16,20 +14,14 @@
                 <ColumnDefinition Width="225" />
                 <ColumnDefinition Width="321" />
             </Grid.ColumnDefinitions>
-
-            <!-- Логотип -->
             <Image Grid.Column="0" Margin="94,20,20,20" MouseLeftButtonDown="Image_MouseLeftButtonDown"
                 Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill" />
         </Grid>
-
-        <!-- Категории и основное содержимое -->
         <Grid Margin="0,100,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-
-            <!-- Верхняя панель -->
             <Grid Background="#D40000">
                 <Menu HorizontalAlignment="Left" VerticalAlignment="Center" 
                    Margin="20,0,0,0" FontSize="16" Background="#D40000">
@@ -57,18 +49,13 @@
                     </Menu.Resources>
                 </Menu>
             </Grid>
-
-            <!-- Основное содержимое страницы -->
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="616,20,616,20">
                 <StackPanel>
-                    <!-- Заголовок -->
                     <TextBlock Text="Delivery and Payment"
                             FontSize="32"
                             FontWeight="Bold"
                             Foreground="Black"
                             Margin="0,0,0,20" />
-
-                    <!-- Раздел: Доставка -->
                     <TextBlock Text="Delivery Information"
                             FontSize="24"
                             FontWeight="Bold"
@@ -77,8 +64,6 @@
                     <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
                         SwiftMart ensures fast and reliable delivery services. Orders within the city are delivered the same day, while regional deliveries are completed the next day. Choose between home delivery or pick-up points conveniently located across the city.
                     </TextBlock>
-
-                    <!-- Раздел: Оплата -->
                     <TextBlock Text="Payment Options"
                             FontSize="24"
                             FontWeight="Bold"
@@ -92,8 +77,6 @@
                         - Bank Transfers
                         - Installment Plans
                     </TextBlock>
-
-                    <!-- Раздел: Возвраты -->
                     <TextBlock Text="Returns and Exchanges"
                             FontSize="24"
                             FontWeight="Bold"
@@ -102,8 +85,6 @@
                     <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
                         SwiftMart offers a hassle-free return and exchange policy. Products can be returned or exchanged within 30 days of purchase, provided they are in their original condition. For more details, please contact our support team.
                     </TextBlock>
-
-                    <!-- Раздел: Часто задаваемые вопросы -->
                     <TextBlock Text="Frequently Asked Questions (FAQ)"
                             FontSize="24"
                             FontWeight="Bold"

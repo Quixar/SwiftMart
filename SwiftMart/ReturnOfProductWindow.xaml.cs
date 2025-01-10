@@ -12,10 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
+/// <summary>
+/// Represents the window for handling product returns in the application.
+/// </summary>
 namespace SwiftMart
 {
     /// <summary>
-    /// Логика взаимодействия для ReturnOfProductWindow.xaml
+    /// Initializes a new instance of the <see cref="ReturnOfProductWindow"/> class.
     /// </summary>
     public partial class ReturnOfProductWindow : Window
     {

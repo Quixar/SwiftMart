@@ -5,14 +5,13 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:local="clr-namespace:SwiftMart"
             mc:Ignorable="d"
-            Title="Product" Height="4871" Width="1920">
+            Title="Product" Height="1080" Width="1920">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2196*"/>
                 <ColumnDefinition Width="197*"/>
             </Grid.ColumnDefinitions>
-            <!-- Верхний красный бар -->
             <Grid Background="#EA6767" Height="100" VerticalAlignment="Top" RenderTransformOrigin="0.912,0.478" Grid.ColumnSpan="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100" />
@@ -20,11 +19,7 @@
                     <ColumnDefinition Width="100" />
                     <ColumnDefinition Width="50" />
                 </Grid.ColumnDefinitions>
-
-                <!-- Логотип -->
                 <Image Grid.Column="0" Height="65" Margin="28,18,1518,18" MouseLeftButtonDown="Image_MouseLeftButtonDown_1" Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill" Grid.ColumnSpan="2"/>
-
-                <!-- Поиск -->
                 <Border Width="720" CornerRadius="10" BorderBrush="Black" BorderThickness="2" Background="LightGray" Padding="2" Grid.Column="1" Margin="264,36,508,34">
                     <TextBox Background="Transparent" BorderThickness="0" VerticalAlignment="Center" Text="Search" Margin="6,0,14,0" />
                 </Border>
@@ -32,14 +27,12 @@
                 <Button BorderThickness="0" Grid.Column="2" VerticalAlignment="Center" Click="Button_Click_3" Width="40" Height="40" Background="#EA6767">
                     <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\1490129319-rounded09_82169.png" Stretch="Fill" RenderTransformOrigin="1.944,-3.166" />
                 </Button>
-
-                <!-- Иконка корзины -->
+                
                 <Button BorderThickness="0" Grid.Column="3" Width="40" Click="Button_Click_4" Height="40" Background="#EA6767" VerticalAlignment="Center">
                     <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\round-account-button-with-user-inside_icon-icons.com_72596.png" Stretch="Fill"/>
                 </Button>
             </Grid>
 
-            <!-- Категории и основное содержимое -->
             <Grid Margin="0,100,0,114" Grid.ColumnSpan="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60" />
@@ -47,10 +40,8 @@
                 </Grid.RowDefinitions>
 
                 <Grid Background="#D40000">
-                    <!-- Верхняя панель -->
                     <Menu HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" FontSize="16">
                         <Menu.Resources>
-                            <!-- Стиль для закругленных элементов меню -->
                             <Style TargetType="MenuItem">
                                 <Setter Property="Template">
                                     <Setter.Value>
@@ -72,9 +63,7 @@
                                 </Setter>
                             </Style>
                         </Menu.Resources>
-                        <!-- Основные категории -->
                         <MenuItem Header="All Categories" Width="205">
-                            <!-- Вложенные пункты меню -->
                             <MenuItem Header="Laptops and Computers">
                                 <MenuItem Header="Laptops">
                                     <MenuItem Header="Asus" />
@@ -110,17 +99,13 @@
                         <ColumnDefinition Width="0*" />
                         <ColumnDefinition Width="98*"/>
                     </Grid.ColumnDefinitions>
-                    <!-- Левая часть с изображениями -->
                     <StackPanel Grid.Column="0" Margin="36,10,567,464">
-
-                        <!-- Превью изображений -->
                         <Grid Width="481">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="50" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="50" />
                             </Grid.ColumnDefinitions>
-                            <!-- Кнопки переключения изображений -->
                             <Button Content="❮" FontSize="18" Width="40" Height="40" HorizontalAlignment="Left" Background="White" BorderThickness="0" Grid.Column="1" Margin="0,130,0,130"/>
                             <Image Grid.Column="1" Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_144667576__1_-removebg-preview.png" Height="300" HorizontalAlignment="Center" />
                             <Button Content="❯" FontSize="18" Width="40" Height="40" HorizontalAlignment="Left" Grid.Column="1" Background="White" BorderThickness="0" Margin="323,130,0,130"/>
@@ -140,16 +125,12 @@
                         </StackPanel>
                     </StackPanel>
 
-                    <!-- Правая часть с информацией -->
                     <StackPanel Margin="742,10,150,0" VerticalAlignment="Top" Height="310" >
-                        <!-- Цена и заголовок -->
                         <TextBlock Text="1429€" FontSize="24" FontWeight="Bold" Foreground="Black" />
                         <TextBlock Text="iPhone 16 Pro Max" FontSize="32" FontWeight="Bold" Margin="0,5,0,10" />
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="★★★★★" FontSize="16" Foreground="Gold" />
                         </StackPanel>
-
-                        <!-- Выбор цвета -->
                         <TextBlock Text="Select color" FontSize="26" Margin="0,10,0,5" />
                         <StackPanel Orientation="Horizontal" Width="360">
                             <Border BorderBrush="Black"  BorderThickness="1" CornerRadius="10" Margin="5">
@@ -163,7 +144,6 @@
                             </Border>
                         </StackPanel>
 
-                        <!-- Выбор памяти -->
                         <TextBlock Text="Capacity" FontSize="26"/>
                         <StackPanel Orientation="Horizontal">
                             <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5" Margin="5">
@@ -178,22 +158,16 @@
                         </StackPanel>
                     </StackPanel>
 
-                    <!-- Панель для покупки -->
                     <Border Grid.Column="2" BorderBrush="Gray" BorderThickness="4" CornerRadius="30" Margin="0,0,-234,0" Height="414" VerticalAlignment="Top">
                         <StackPanel Margin="0,6,0,4">
                             <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_144667576__1_-removebg-preview.png" Height="200" Margin="0,0,0,10"></Image>
 
                             <TextBlock Text="Quantity" FontSize="20" RenderTransformOrigin="-0.007,0.561" Width="85"></TextBlock>
                             <StackPanel Orientation="Horizontal" Width="146">
-                                <!-- Кнопка уменьшения количества -->
                                 <Border Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="20" Margin="5,0">
                                     <Button Content="-" Width="40" Height="40" FontSize="20" Background="Transparent" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
-
-                                <!-- Текстовое поле с количеством -->
                                 <TextBlock Text="1" FontSize="24" Width="40" Height="40" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-
-                                <!-- Кнопка увеличения количества -->
                                 <Border Background="White" BorderBrush="Black" BorderThickness="1" CornerRadius="20" Margin="5,0">
                                     <Button Content="+" Width="40" Height="40" FontSize="20" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                                 </Border>
@@ -203,9 +177,7 @@
                         </StackPanel>
                     </Border>
 
-                    <!-- Разделы ниже -->
                     <StackPanel Margin="40,423,-255,0" Grid.ColumnSpan="3" Height="1114" VerticalAlignment="Top">
-                        <!-- Эксандеры -->
                         <StackPanel>
                             <Expander Header="Product Description" IsExpanded="False" FontSize="20" />
                             <Expander Header="Technical Specifications" IsExpanded="False" FontSize="20">
@@ -216,17 +188,13 @@
                                 </StackPanel>
                             </Expander>
                             <Expander Header="Reviews and Ratings" IsExpanded="False" FontSize="20">
-                                <!-- Содержимое Expander -->
                                 <StackPanel Margin="0,10,0,0" VerticalAlignment="Top">
                                     <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="CUSTOMER REVIEWS" FontSize="20" />
-                                    <!-- Общий рейтинг -->
                                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                                         <TextBlock Text="4.8" FontWeight="Bold" FontSize="26" VerticalAlignment="Center" />
                                         <TextBlock Text="★★★★★" Foreground="Red" FontSize="40" Margin="10,0,10,0" VerticalAlignment="Center" />
                                         <TextBlock Text="(341)" FontSize="16" VerticalAlignment="Center" />
                                     </StackPanel>
-
-                                    <!-- Прогресс-бары для звезд -->
                                     <StackPanel HorizontalAlignment="Left" Margin="0,10,0,0" Width="291" Height="219">
                                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                             <TextBlock Text="5★" Width="30" VerticalAlignment="Center" />
@@ -258,38 +226,25 @@
                                     </StackPanel>
 
                                     <StackPanel Margin="0,20,0,0">
-                                        <!-- Первый комментарий -->
                                         <Border BorderBrush="Black" BorderThickness="1" CornerRadius="10" Padding="10" Margin="0,10" HorizontalAlignment="Left">
                                             <StackPanel>
-                                                <!-- Оценка и дата -->
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="★★★★★" FontSize="16" Foreground="Red" VerticalAlignment="Center" />
                                                     <TextBlock Text="January 1, 2025" FontSize="14" VerticalAlignment="Center" Margin="20,0,0,0" HorizontalAlignment="Right" Width="Auto"/>
                                                 </StackPanel>
-
-                                                <!-- Текст отзыва -->
                                                 <TextBlock Text="Great product! The performance is excellent, and the camera quality is top-notch. Worth every penny!" FontSize="16" TextWrapping="Wrap" Margin="0,10"/>
-
-                                                <!-- Сердечко -->
                                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                                                     <Button Content="❤️" FontSize="20" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </Border>
-
-                                        <!-- Второй комментарий -->
                                         <Border BorderBrush="Black" BorderThickness="1" CornerRadius="10" Padding="10" Margin="0,10" HorizontalAlignment="Left" Width="737">
                                             <StackPanel>
-                                                <!-- Оценка и дата -->
                                                 <StackPanel Orientation="Horizontal">
                                                     <TextBlock Text="★★★★★" FontSize="16" Foreground="Red" VerticalAlignment="Center" />
                                                     <TextBlock Text="December 25, 2024" FontSize="14" VerticalAlignment="Center" Margin="20,0,0,0" HorizontalAlignment="Right" Width="Auto"/>
                                                 </StackPanel>
-
-                                                <!-- Текст отзыва -->
                                                 <TextBlock Text="I'm very happy with this phone. The display is bright and crisp, and it works great for gaming!" FontSize="16" TextWrapping="Wrap" Margin="0,10"/>
-
-                                                <!-- Сердечко -->
                                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                                                     <Button Content="❤️" FontSize="20" Background="Transparent" BorderThickness="0" HorizontalAlignment="Right"/>
                                                 </StackPanel>
@@ -302,16 +257,14 @@
 
                         <ScrollViewer Grid.Row="1" Width="1759">
                             <UniformGrid Columns="6" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20">
-                                <!-- Карточка товара -->
                                 <Border BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Margin="10" >
                                     <StackPanel>
                                         <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_91714553-removebg-preview.png" Height="150" Margin="0,10"/>
                                         <TextBlock Text="AOC C27G2ZE 27-inch Full HD Gaming Monitor" 
-                        TextWrapping="Wrap" 
-                        HorizontalAlignment="Center" 
-                        FontSize="14" FontWeight="Bold" 
-                        Margin="5" FontFamily="Arial Rounded MT Bold" Focusable="True" />
-                                        <!-- Цена с красной обводкой -->
+                                        TextWrapping="Wrap" 
+                                        HorizontalAlignment="Center" 
+                                        FontSize="14" FontWeight="Bold" 
+                                        Margin="5" FontFamily="Arial Rounded MT Bold" Focusable="True" />
                                         <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
                                         HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
                                             <TextBlock Text="1599$" 
@@ -336,7 +289,6 @@
                                         HorizontalAlignment="Center" 
                                         FontSize="14" FontWeight="Bold" 
                                         Margin="5" FontFamily="Arial Rounded MT Bold" />
-                                        <!-- Цена с красной обводкой -->
                                         <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
                                             HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
                                             <TextBlock Text="1599$" 
@@ -361,7 +313,6 @@
                                         HorizontalAlignment="Center" 
                                         FontSize="14" FontWeight="Bold" 
                                         Margin="5" FontFamily="Arial Rounded MT Bold" />
-                                        <!-- Цена с красной обводкой -->
                                         <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
                                                         HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
                                             <TextBlock Text="1599$" 
@@ -386,7 +337,6 @@
                                         HorizontalAlignment="Center" 
                                         FontSize="14" FontWeight="Bold" 
                                         Margin="5" FontFamily="Arial Rounded MT Bold" />
-                                        <!-- Цена с красной обводкой -->
                                         <Border BorderBrush="Red" BorderThickness="2" CornerRadius="10" 
                                             HorizontalAlignment="Center" Margin="-150,30,0,0" Background="Red" Height="30" Width="85">
                                             <TextBlock Text="1599$" 
@@ -399,12 +349,8 @@
                                         <Border BorderBrush="Black" BorderThickness="1" CornerRadius="100" Width="40" Height="40" Background="White" Margin="150,-35,0,10" HorizontalAlignment="Center">
                                             <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\shopping_cart_insert_icon_245997.png" Stretch="Fill" Margin="4,6,4,6"/>
                                         </Border>
-
                                     </StackPanel>
-
-
                                 </Border>
-
                             </UniformGrid>
                         </ScrollViewer>
                     </StackPanel>
@@ -412,10 +358,7 @@
                 </Grid>
 
                 <StackPanel Background="LightGray" Margin="-27,4109,0,0" VerticalAlignment="Top" Grid.Row="1" Height="211">
-                    <!-- Логотип и название -->
                     <TextBlock Text="Swift Mart" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0,0,0"/>
-
-                    <!-- Ссылки на страницы -->
                     <TextBox Text="Company Information and Help" FontSize="24" Background="Transparent" Foreground="Black" Margin="15,0" HorizontalAlignment="Center" BorderThickness="0"></TextBox>
                     <StackPanel Orientation="Vertical">
                         <TextBlock FontSize="20" HorizontalAlignment="Center">

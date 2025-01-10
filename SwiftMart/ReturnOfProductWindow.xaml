@@ -7,8 +7,6 @@
         mc:Ignorable="d"
         Title="ReturnOfProductWindow" Height="1080" Width="1920">
     <Grid>
-
-        <!-- Верхний красный бар -->
         <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="320" />
@@ -16,38 +14,27 @@
                 <ColumnDefinition Width="225" />
                 <ColumnDefinition Width="321" />
             </Grid.ColumnDefinitions>
-
-            <!-- Логотип -->
             <Image Grid.Column="0" Margin="94,20,20,20" 
                 Source="/Resources/logo.png" Stretch="Fill" />
-
-            <!-- Поиск -->
             <Border CornerRadius="10" BorderBrush="Black" BorderThickness="2" 
                  Background="LightGray" Padding="2" Grid.Column="1" Margin="20,35">
                 <TextBox Background="Transparent" BorderThickness="0" 
                       VerticalAlignment="Center" Text="Search" 
                       FontFamily="Arial" Margin="6" />
             </Border>
-
-            <!-- Иконка пользователя -->
             <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="220,0,50,0">
                 <Image Source="/Resources/user_icon.png" Stretch="Fill" />
             </Button>
-
-            <!-- Иконка корзины -->
             <Button BorderThickness="0" Grid.Column="3" Height="56" Background="#EA6767" VerticalAlignment="Center" Margin="85,0,185,0">
                 <Image Source="/Resources/cart_icon.png" Stretch="Fill" />
             </Button>
         </Grid>
-
-        <!-- Категории и основное содержимое -->
         <Grid Margin="0,100,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <!-- Верхняя панель -->
             <Grid Background="#D40000">
                 <Menu HorizontalAlignment="Left" VerticalAlignment="Center" 
                    Margin="20,0,0,0" FontSize="16" Background="#D40000">
@@ -76,17 +63,13 @@
                 </Menu>
             </Grid>
 
-            <!-- Основное содержимое страницы -->
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="616,20,616,20">
                 <StackPanel>
-                    <!-- Заголовок -->
                     <TextBlock Text="Return Policy"
                             FontSize="32"
                             FontWeight="Bold"
                             Foreground="Black"
                             Margin="0,0,0,20" />
-
-                    <!-- Раздел: Политика возврата -->
                     <TextBlock Text="Our Return Policy"
                             FontSize="24"
                             FontWeight="Bold"
@@ -95,8 +78,6 @@
                     <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
                         We understand that sometimes you may need to return a product. At SwiftMart, we offer a hassle-free return policy within 30 days of purchase. Returned items must be in their original condition with all tags and packaging intact.
                     </TextBlock>
-
-                    <!-- Раздел: Как вернуть товар -->
                     <TextBlock Text="How to Return"
                             FontSize="24"
                             FontWeight="Bold"
@@ -109,8 +90,6 @@
                         3. Pack the item securely and include a copy of your invoice.
                         4. Ship the package to the address provided by our support team.
                     </TextBlock>
-
-                    <!-- Раздел: Условия возврата -->
                     <TextBlock Text="Return Conditions"
                             FontSize="24"
                             FontWeight="Bold"

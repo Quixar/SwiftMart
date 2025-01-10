@@ -6,6 +6,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
+/// <summary>
+/// Represents the user interface control for managing shipping addresses, including adding, editing, and deleting addresses.
+/// </summary>
 namespace SwiftMart
 {
     /// <summary>
@@ -17,6 +20,9 @@ namespace SwiftMart
         private readonly AddressService addressService;
         private AddressValidator addressValidator;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShippingAddressControl"/> class.
+        /// </summary>
         public ShippingAddressControl()
         {
             addressValidator = new AddressValidator();
@@ -26,6 +32,10 @@ namespace SwiftMart
             DisplayUserAddresses();
         }
 
+
+        /// <summary>
+        /// Resets the address input fields to empty values.
+        /// </summary>
         private void ResetAddressForm()
         {
             Country.Text = string.Empty;
@@ -36,12 +46,22 @@ namespace SwiftMart
             PostCode.Text = string.Empty;
         }
 
+        /// <summary>
+        /// Opens the form to add a new shipping address when the "Add Address" button is clicked.
+        /// </summary>
+        /// <param name="sender">The object that triggered the event.</param>
+        /// <param name="e
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ResetAddressForm();
             AddAddressDialog.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Saves the new address and displays the updated list of user addresses.
+        /// </summary>
+        /// <param name="sender">The object that triggered the event.</param>
+        /// <param name="
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             addressValidator.Validate(Country.Text, City.Text, StreetName.Text, HouseNumber.Text, PostCode.Text);
@@ -63,6 +83,9 @@ namespace SwiftMart
             DisplayUserAddresses();
         }
 
+        /// <summary>
+        /// Displays all the addresses of the current user.
+        /// </summary>
         private void DisplayUserAddresses()
         {
             var userAddresses = addressService.GetAddressesByCustomerId(CustomerSession.Instance.Id);
@@ -152,6 +175,11 @@ namespace SwiftMart
             addAddressBorder.Child = addAddressButton;
             addressesPanel.Children.Add(addAddressBorder);
         }
+
+        /// <summary>
+        /// Pre-fills the address form with the selected address for editing.
+        /// </summary>
+        /// <param name="address">The address to be edited.</param>
         private void EditAddress(AddressEntity.Address address)
         {
             Country.Text = address.Country;
@@ -163,6 +191,11 @@ namespace SwiftMart
 
             AddAddressDialog.Visibility = Visibility.Visible;
         }
+
+        /// <summary>
+        /// Deletes the selected address and updates the list of addresses.
+        /// </summary>
+        /// <param name="address">The address to be deleted.</param>
         private void DeleteAddress(AddressEntity.Address address)
         {
             if (MessageBox.Show("Are you sure you want to delete this address?", "Confirm Delete", MessageBoxButton.YesNo) == MessageBoxResult.Yes)

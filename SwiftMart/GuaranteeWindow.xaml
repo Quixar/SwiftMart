@@ -7,8 +7,6 @@
         mc:Ignorable="d"
         Title="GuaranteeWindow" Height="1080" Width="1920">
     <Grid>
-
-        <!-- Верхний красный бар -->
         <Grid Background="#EA6767" Height="100" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="320" />
@@ -16,20 +14,14 @@
                 <ColumnDefinition Width="225" />
                 <ColumnDefinition Width="321" />
             </Grid.ColumnDefinitions>
-
-            <!-- Логотип -->
             <Image Grid.Column="0" Margin="94,20,20,20" MouseLeftButtonDown="Image_MouseLeftButtonDown"
                 Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\photo_2024-12-14_14-58-16-removebg-preview.png" Stretch="Fill" />
         </Grid>
-
-        <!-- Категории и основное содержимое -->
         <Grid Margin="0,100,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-
-            <!-- Верхняя панель -->
             <Grid Background="#D40000">
                 <Menu HorizontalAlignment="Left" VerticalAlignment="Center" 
                    Margin="20,0,0,0" FontSize="16" Background="#D40000">
@@ -57,18 +49,13 @@
                     </Menu.Resources>
                 </Menu>
             </Grid>
-
-            <!-- Основное содержимое страницы -->
             <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="616,20,616,20">
                 <StackPanel>
-                    <!-- Заголовок -->
                     <TextBlock Text="Guarantee Information"
                             FontSize="32"
                             FontWeight="Bold"
                             Foreground="Black"
                             Margin="0,0,0,20" />
-
-                    <!-- Раздел: Гарантия -->
                     <TextBlock Text="Our Guarantee"
                             FontSize="24"
                             FontWeight="Bold"
@@ -77,8 +64,6 @@
                     <TextBlock TextWrapping="Wrap" Margin="0,0,0,20">
                         At SwiftMart, we take pride in the quality of our products. All items come with a standard 1-year warranty against manufacturing defects. Extended warranties are available for select items.
                     </TextBlock>
-
-                    <!-- Раздел: Как воспользоваться гарантией -->
                     <TextBlock Text="How to Claim"
                             FontSize="24"
                             FontWeight="Bold"
@@ -90,8 +75,6 @@
                         2. Provide proof of purchase and details of the issue.
                         3. Our team will guide you through the next steps, including repair, replacement, or refund options.
                     </TextBlock>
-
-                    <!-- Раздел: Часто задаваемые вопросы -->
                     <TextBlock Text="Frequently Asked Questions (FAQ)"
                             FontSize="24"
                             FontWeight="Bold"

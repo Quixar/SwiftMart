@@ -6,6 +6,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
+/// <summary>
+/// User control for handling payment-related actions such as adding and displaying bank cards.
+/// </summary>
 namespace SwiftMart
 {
     /// <summary>
@@ -15,16 +18,29 @@ namespace SwiftMart
     {
         private CardService cardService;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaymentControl"/> class.
+        /// Initializes the card service and displays the user's saved cards.
+        /// </summary>
         public PaymentControl()
         {
             cardService = new CardService();
             InitializeComponent();
             DisplayUserCards();
         }
+
+        /// <summary>
+        /// Event handler for when the user clicks the "Add New Card" button. Displays the Add Card dialog.
+        /// </summary>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddCardDialog.Visibility = Visibility.Visible;
         }
+
+        /// <summary>
+        /// Event handler for when the user clicks the "Save Card" button. Saves the entered card details to the service.
+        /// If valid, the card is saved and displayed in the user's card list.
+        /// </summary>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             AddCardDialog.Visibility = Visibility.Collapsed;
@@ -58,6 +74,11 @@ namespace SwiftMart
                 }
             }
         }
+
+        /// <summary>
+        /// Displays all the user's saved cards in a WrapPanel. Each card is shown with the last four digits and the card type (e.g., VISA).
+        /// Also provides an option to add a new card.
+        /// </summary>
         private void DisplayUserCards()
         {
             var userCards = cardService.GetUserCards(CustomerSession.Instance.Id);
@@ -124,6 +145,10 @@ namespace SwiftMart
 
             cardsPanel.Children.Add(addCardBorder);
         }
+
+        /// <summary>
+        /// Event handler for when the user clicks the "Cancel" button in the Add Card dialog. Hides the Add Card dialog.
+        /// </summary>
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             AddCardDialog.Visibility = Visibility.Collapsed;

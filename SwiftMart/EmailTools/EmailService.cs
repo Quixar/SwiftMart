@@ -5,10 +5,23 @@ using System.Net.Mail;
 using System.Text;
 using System.Windows;
 
+/// <summary>
+/// Provides email sending functionality using FluentEmail.
+/// Utilizes an SMTP client to send emails to users, including welcome emails after registration.
+/// </summary>
 namespace SwiftMart.EmailTools
 {
     public class EmailService
     {
+
+        /// <summary>
+        /// Sends a welcome email to the user after registration.
+        /// Utilizes the Gmail SMTP server and FluentEmail for email construction and sending.
+        /// </summary>
+        /// <param name="emailSend">The email address of the recipient.</param>
+        /// <param name="name">The name of the recipient.</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
+        /// <exception cref="Exception">Thrown if the email sending fails.</exception>
         public async Task Sender(string emailSend, string name)
         {
             try
@@ -18,7 +31,7 @@ namespace SwiftMart.EmailTools
                     EnableSsl = true,
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     Port = 587,
-                    Credentials = new System.Net.NetworkCredential("lmecomcompany@gmail.com", "mgspnfykrzjhwmmu") // App Password для Gmail
+                    Credentials = new System.Net.NetworkCredential("lmecomcompany@gmail.com", "mgspnfykrzjhwmmu")
                 });
 
                 Email.DefaultSender = sender;
@@ -31,7 +44,7 @@ namespace SwiftMart.EmailTools
                 Email.DefaultRenderer = new RazorRenderer();
 
                 var email = await Email
-                    .From("lmecomcompany@gmail.com") // Должно совпадать с вашим Gmail
+                    .From("lmecomcompany@gmail.com")
                     .To(emailSend, name)
                     .Subject("Welcome to SwiftMart!")
                     .UsingTemplate(template.ToString(), new { FirstName = name })

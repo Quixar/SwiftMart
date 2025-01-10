@@ -7,10 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-       
-        <!-- Основной контент -->
         <StackPanel Margin="150,50,0,50">
-            <!-- Фильтры -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="10">
                 <ComboBox Width="120" Margin="0,0,10,0">
                     <ComboBoxItem Content="View all" />
@@ -28,13 +25,10 @@
                 </ComboBox>
             </StackPanel>
 
-            <!-- Карточка заказа -->
             <Border Margin="10" Padding="10" Background="#F5F5F5" BorderBrush="#CCCCCC" BorderThickness="1" CornerRadius="5">
                 <StackPanel Orientation="Horizontal">
-                    <!-- Изображение товара -->
                     <Image Source="C:\Users\lolim\Desktop\Ресурсы для Swift Mart\ASSET_MMS_144667576__1_-removebg-preview.png" Width="100" Height="100" Margin="5" />
 
-                    <!-- Информация о заказе -->
                     <StackPanel Margin="10">
                         <TextBlock Text="APPLE iPhone 13 128 GB Midnight Dual SIM" FontWeight="Bold" FontSize="14" />
                         <TextBlock Text="Black" FontSize="12" Foreground="Gray" />
@@ -42,8 +36,6 @@
                         <TextBlock Text="Order date: Dec 16, 2024" FontSize="12" />
                         <TextBlock Text="Order ID: 30432903283036" FontSize="12" />
                     </StackPanel>
-
-                    <!-- Кнопки взаимодействия -->
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center">
                         <Button Content="Write a review" Background="Red" Foreground="White" Margin="5" />
                         <Button Content="Add to cart" Margin="5" />
@@ -52,8 +44,6 @@
                 </StackPanel>
             </Border>
         </StackPanel>
-
-        <!-- Нижняя панель -->
         <TextBlock Text="Contact information" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" />
     </Grid>
 </UserControl>
