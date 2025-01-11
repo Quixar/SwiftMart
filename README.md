@@ -1,12 +1,12 @@
 # Project: SwiftMart
 
-##📄 Project Description
+## 📄 Project Description
 
 **SwiftMart** is a platform for selling products and managing orders, developed using **WPF (C#)**. The project aims to enhance **teamwork skills** and create a functional online store with a user-friendly interface.
 
-##📊 User Roles
+## 📊 User Roles
 
-###Administrator
+### Administrator
 
 - **User management** (buyers and sellers)
 
@@ -14,7 +14,7 @@
 
 - **Management** of product categories and filters
 
-###Seller
+### Seller
 
 - **Add, edit, and delete products**
 
@@ -22,7 +22,7 @@
 
 - **View sales statistics**
 
-###Buyer
+### Buyer
 
 - **Registration and authorization**
 
@@ -34,7 +34,7 @@
 
 - **Manage personal information**
 
-##🛠️ Core Features
+## 🛠️ Core Features
 
 ***Registration and Authorization***
 
@@ -74,7 +74,7 @@
 
 - **Platform statistics**
 
-##👨‍💻 Project Technologies
+## 👨‍💻 Project Technologies
 
 Programming Language: **C#**
 
@@ -88,7 +88,7 @@ Architecture: **MVVM, SOLID, Design Patterns, OOP**
 
 Payment system integration: **optional**
 
-##🗓️ Development Stages
+## 🗓️ Development Stages
 
 Planning
 
@@ -108,7 +108,7 @@ Bug fixing
 
 Interface optimization
 
-##🌐 Project Launch
+## 🌐 Project Launch
 
 **Clone the repository:**
 
@@ -120,7 +120,7 @@ Configure the PostgreSQL database connection.
 
 Run the project.
 
-##🌟 Authors
+## 🌟 Authors
 
 Developer 1: Mukhammed Lolo
 
