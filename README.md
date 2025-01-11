@@ -112,7 +112,7 @@ Interface optimization
 
 **Clone the repository:**
 
-git clone **https://github.com/your-repo/swiftmart.git**
+git clone **[https://github.com/your-repo/swiftmart.git](https://github.com/Quixar/SwiftMart)**
 
 Open the project in Visual Studio.
 
